@@ -10,3 +10,13 @@ html {
 	height: 100%;
 	scroll-behavior: smooth;
 }
+
+input[type="text"], textarea {
+	stroke: none;
+	border: none;
+	outline: none;
+}
+
+.special-label {
+	opacity: 0 !important;
+}
