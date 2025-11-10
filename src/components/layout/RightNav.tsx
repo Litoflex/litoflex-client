@@ -1,21 +1,60 @@
 import { Dispatch, SetStateAction } from "react";
 import { tv } from "tailwind-variants";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 const link = tv({
-    base: "block text-black p-5 font-medium hover:text-gray-500"
-})
+	base: "block text-black p-5 font-medium hover:text-gray-500",
+});
 
-export default function RightNav({isVisible, setIsVisible}: {isVisible: boolean, setIsVisible: Dispatch<SetStateAction<boolean>>}) {
-    return (
-        isVisible ?
-        <div onClick={(() => setIsVisible(false))} className="flex bg-black/30 w-full h-full fixed top-0 left-0 z-2 justify-end">
-            <div className="h-full bg-white p-4 w-70 shadow-2xl">
-                <a className={link()} href="#main">О Нас</a>
-                <a className={link()} href="#catalogue">Каталог</a>
-                <a className={link()} href="#contact">Оставить заявку</a>
-                <a className={link()} href="/privacy-policy">Политика конфиденциальности</a>
-                <a className={link()} href="/certificates">Сертификаты</a>
-            </div>
-        </div> : null
-    )
+export default function RightNav({
+	isVisible,
+	setIsVisible,
+}: {
+	isVisible: boolean;
+	setIsVisible: Dispatch<SetStateAction<boolean>>;
+}) {
+	return (
+		<AnimatePresence>
+			{isVisible ? (
+				<motion.div
+					key="overlay"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					onClick={() => setIsVisible(false)}
+					className="flex bg-black/30 w-full h-full fixed top-0 left-0 z-2 justify-end"
+				>
+					<motion.div
+						key="nav"
+						initial={{ translateX: 300 }}
+						animate={{ translateX: 0 }}
+						exit={{ translateX: 300 }}
+						transition={{
+							type: "tween",
+							ease: "circOut",
+							duration: 0.11,
+						}}
+						className="h-full bg-white p-4 w-70 shadow-2xl"
+					>
+						<Link className={link()} href="#main">
+							О Нас
+						</Link>
+						<Link className={link()} href="#catalogue">
+							Каталог
+						</Link>
+						<Link className={link()} href="#contact">
+							Оставить заявку
+						</Link>
+						<Link className={link()} href="/privacy-policy">
+							Политика конфиденциальности
+						</Link>
+						<Link className={link()} href="/certificates">
+							Сертификаты
+						</Link>
+					</motion.div>
+				</motion.div>
+			) : null}
+		</AnimatePresence>
+	);
 }
