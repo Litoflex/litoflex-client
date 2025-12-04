@@ -8,6 +8,7 @@ const eslintConfig = defineConfig([
 	{
 		rules: {
 			// "prefer-const": "off", // вимикаємо авто-заміни let на const
+			"@typescript-eslint/no-explicit-any": "off",
 		},
 	},
 	// Override default ignores of eslint-config-next.

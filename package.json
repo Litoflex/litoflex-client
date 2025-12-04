@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "antd": "^5.28.1",
     "clsx": "^2.1.1",
     "motion": "^12.23.24",
     "next": "16.0.0",
@@ -24,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9",
     "eslint-config-next": "16.0.0",
     "tailwindcss": "^4",

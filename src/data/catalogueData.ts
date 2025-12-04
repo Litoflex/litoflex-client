@@ -118,7 +118,7 @@ const catalogueData: Array<Catalogue> = [
 		],
 	},
 	{
-		title: "Ещё что-то",
+		title: "?? под кирпич",
 		items: [
 			{
 				article: "G01",
