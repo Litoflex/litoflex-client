@@ -35,13 +35,25 @@ export default function RightNav({
 							ease: "circOut",
 							duration: 0.11,
 						}}
-						className="h-full bg-white p-4 w-70 shadow-2xl"
+						className="h-full bg-white p-4 w-70 shadow-2xl mt-20"
 					>
 						<Link className={link()} href="#main">
-							О Нас
+							Главная
 						</Link>
 						<Link className={link()} href="#catalogue">
 							Каталог
+						</Link>
+						<Link className={link()} href="#chars">
+							Характеристики материала
+						</Link>
+						<Link className={link()} href="#materialdesc">
+							Описание материала
+						</Link>
+						<Link className={link()} href="#materialappl">
+							Применение материала
+						</Link>
+						<Link className={link()} href="#materireliablity">
+							Надежность материала
 						</Link>
 						<Link className={link()} href="#contact">
 							Оставить заявку

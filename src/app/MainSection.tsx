@@ -14,6 +14,7 @@ export default function MainSection() {
 				backgroundSize: "cover",
 				backgroundPosition: "center center",
 				backgroundRepeat: "no-repeat",
+				marginTop: 70
 			}}
 			className="flex flex-col items-center justify-center"
 		>

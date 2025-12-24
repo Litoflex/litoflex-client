@@ -1,14 +1,19 @@
 "use client";
 import catalogueData, {
-	CatalogueItem,
+	Catalogue
 } from "@/data/catalogueData";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "motion/react";
+import { BiRightArrowAlt } from "react-icons/bi";
+import Link from "next/link";
 
-const Slot = ({ data }: { data: CatalogueItem }) => {
+const MotionLink = motion.create(Link);
+
+const CatalogueSlot = ({ data }: { data: Catalogue }) => {
 	return (
-		<motion.div
+		<MotionLink
+			href={`/category/${data.key}`}
 			initial={{ scale: 0, opacity: 0 }}
 			whileInView={{ scale: 1, opacity: 1 }}
 			viewport={{ once: true, amount: "some" }}
@@ -16,33 +21,34 @@ const Slot = ({ data }: { data: CatalogueItem }) => {
 				background:
 					"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.4) ), url('/pattern2.png')",
 				backgroundRepeat: "repeat",
-				backgroundSize: "auto",
-				flex: "1 1 20%",
+				backgroundSize: "auto"
 			}}
-			className="py-5 px-5 w-75 h-95 border-[#908E8B] border-2 flex flex-col justify-center items-center gap-2 rounded-xl shadow-xl item_slot"
+			className={`
+				py-5 px-5 w-full h-25 cursor-pointer border-[#908E8B] border-2
+				flex flex-row justify-between items-center gap-2 rounded-2xl shadow-xl
+				mb-5
+				transition
+				active:scale-98
+				hover:scale-101 ctss
+			`}
 		>
-			<div className="bg-[#CDBFB6] text-xl mb-2 self-start rounded-xl py-1 px-4">
-				{data.article}
-			</div>
-			<Image
-				src={data.img}
-				alt="Item image"
-				width={280}
-				height={280}
-			/>
+			<div className="flex flex-row justify-center items-center">
+				<Image
+					src={data.img}
+					alt="Item image"
+					width={100}
+					height={100}
+				/>
 
-			<p className="text-orange-800 text-2xl mt-3 font-bold">
-				{data.name}
-			</p>
-			<p className="text-[#776969] text-xl mt-[-5px]">
-				Размер -{" "}
-				<b className="text-[#4A3E3E]">{data.size}</b>
-			</p>
-			<p className="text-[#776969] text-xl">
-				Цена м<sup>2</sup> -{" "}
-				<b className="text-[#4A3E3E]">{data.price}</b>
-			</p>
-		</motion.div>
+				<p className="text-3xl font-bold text-gray-700 ml-2">
+					{data.title}
+				</p>
+			</div>
+
+			<div>
+				<BiRightArrowAlt className="arrow" size={40} />
+			</div>
+		</MotionLink>
 	);
 };
 
@@ -56,26 +62,20 @@ export default function CatalogSection() {
 					"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.7) ), url('/pattern1.png')",
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto",
+				scrollMarginTop: 80
 			}}
 			className="flex flex-col items-center justify-start p-10"
 		>
-			<h1 className="text-black font-bold text-5xl mb-2">
+			<h1 className="text-orange-800 font-bold text-5xl mb-5">
 				Каталог
 			</h1>
 
 			{catalogueData.map((cat, catInd) => (
 				<React.Fragment key={catInd * 100 - 1}>
-					<h2 className="text-[#733A00] font-bold text-4xl mb-2">
-						{cat.title}
-					</h2>
-					<div className="items_cont w-full mt-5 px-10 grid grid-cols-4 gap-y-10 place-items-center mb-6">
-						{cat.items.map((item, itemInd) => (
-							<Slot
-								key={catInd * 100 + itemInd}
-								data={item}
-							/>
-						))}
-					</div>
+					<CatalogueSlot
+						key={catInd * 100 + catInd}
+						data={cat}
+					/>
 				</React.Fragment>
 			))}
 		</div>
