@@ -4,6 +4,7 @@ export interface Catalogue {
 }
 
 export interface CatalogueItem {
+	name: string;
 	article: string;
 	img: string;
 	size: string;
@@ -15,48 +16,56 @@ const catalogueData: Array<Catalogue> = [
 		title: "Гибкий камень",
 		items: [
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
@@ -68,48 +77,56 @@ const catalogueData: Array<Catalogue> = [
 		title: "Термопанели под кирпич",
 		items: [
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
@@ -121,48 +138,56 @@ const catalogueData: Array<Catalogue> = [
 		title: "?? под кирпич",
 		items: [
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",
 				price: "1 250 руб",
 			},
 			{
+				name: "Имя товара",
 				article: "G01",
 				img: "/item.png",
 				size: "950x550мм",

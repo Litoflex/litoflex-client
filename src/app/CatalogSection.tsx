@@ -31,7 +31,10 @@ const Slot = ({ data }: { data: CatalogueItem }) => {
 				height={280}
 			/>
 
-			<p className="text-[#776969] text-xl mt-3">
+			<p className="text-orange-800 text-2xl mt-3 font-bold">
+				{data.name}
+			</p>
+			<p className="text-[#776969] text-xl mt-[-5px]">
 				Размер -{" "}
 				<b className="text-[#4A3E3E]">{data.size}</b>
 			</p>

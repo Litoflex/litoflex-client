@@ -1,11 +1,32 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 
 export default function ContactSection() {
 	const [phone, setPhone] = useState("");
+	const [name, setName] = useState("");
+	const [comment, setComment] = useState("");
+	const [politic, setPolitic] = useState(false);
+	const [shAddClass, setShAddClass] = useState(false);
+	const [isCanGet, setIsCanGet] = useState(false);
+
+	const onConfirm = useCallback(() => {
+		const data = {phone, name, comment, politic};
+		if (!politic) {
+			setShAddClass(true);
+			return;
+		}
+	}, [phone, politic]);
+
+	
+	useEffect(() => {
+		const phoneCan = phone.length === ("375312333333".length);
+		const nameCan = name.length > 0;
+		const politicCan = politic === true;
+
+		setIsCanGet(phoneCan && nameCan && politicCan);
+	}, [phone, name, politic]);
 
 	return (
 		<div
@@ -58,7 +79,7 @@ export default function ContactSection() {
 							borderRadius: 8,
 						}}
 						buttonStyle={{
-							backgroundColor: "transparent",
+							background: "transparent",
 							border: "none",
 							borderRadius: 8,
 							marginLeft: 6,
@@ -69,32 +90,30 @@ export default function ContactSection() {
 							required: true,
 						}}
 					/>
-					{/* <span>
-						<Image
-							src="/numb.png"
-							alt="Numb"
-							width={280}
-							height={280}
-							priority
-						/>
-						<input
-							className="bg-[#BCA8A0] mt-2 placeholder:text-[#756c6c] w-full px-4 py-2 rounded-lg stroke-none border-none"
-							type="text"
-							placeholder="Телефон"
-						/>
-					</span> */}
 
 					<input
 						className="mt-4 bg-[#BCA8A0] placeholder:text-[#756c6c] w-full px-4 py-2 rounded-lg stroke-none border-none"
 						type="text"
 						placeholder="Имя"
+						value={name}
+						onChange={e => setName(e.target.value)}
 					/>
 					<textarea
 						className="mt-2 bg-[#BCA8A0] placeholder:text-[#756c6c] w-full h-40 px-4 py-2 rounded-lg stroke-none border-none resize-none"
 						placeholder="Комментарий"
+						value={comment}
+						onChange={e => setComment(e.target.value)}
 					/>
 					<div className="mt-2 mb-2">
-						<input type="checkbox" />
+						<input
+							className={`customcheckbox ${shAddClass ? "customcheckbox_notchecked" : ""}`}
+							type="checkbox"
+							value={politic.toString()}
+							onChange={e => {
+								setPolitic(!politic);
+								if (politic) setShAddClass(false);
+							}}
+						/>
 						<span className="ml-2">
 							Я согласен(-а) с{" "}
 							<a
@@ -106,7 +125,13 @@ export default function ContactSection() {
 							конфиденциальности
 						</span>
 					</div>
-					<button className="bg-[#A52C2C] hover:bg-[#942828] transition active:scale-90 cursor-pointer w-full text-white py-3 px-4 rounded-lg mt-2">
+					<button onClick={onConfirm}
+					className={
+						`transition active:scale-90 cursor-pointer w-full
+						text-white py-3 px-4 rounded-lg mt-2
+						${isCanGet ? "bg-[#A52C2C] hover:bg-[#942828]" : "bg-[#312c2c] hover:bg-[#1f1c1c]"}
+						`
+					}>
 						Получить консультацию
 					</button>
 				</div>

@@ -35,11 +35,12 @@ export default function MainSection() {
 				}}
 				className="main_about bg-[#7a684bbe] py-7 px-10 max-w-200 rounded-xl backdrop-blur-sm shadow-xl"
 			>
-				<p className="text-[#C9BCAF] font-medium text-3xl">
-					Мы работаем по стандартам компании Novak Dekor,
+				<p className="text-[#C9BCAF] font-medium text-3xl text-center">
+					{/* Мы работаем по стандартам компании Novak Dekor,
 					которая успешно развивается уже более 10 лет,
 					внедряя новые технологии и постоянно улучшая свой
-					продукт.
+					продукт. */}
+					Мы производим продукт из  современных композитных материалов на основе натуральной каменной крошки и акриловых полимеров. Они сочетают в себе бескомпромиссную красоту природы и передовые технологии.
 				</p>
 			</motion.div>
 			<motion.svg

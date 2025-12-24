@@ -203,3 +203,59 @@ textarea {
 .admpage {
 	font-family: "Euclid Square";
 }
+
+
+
+.customcheckbox {
+	appearance: none;
+	-webkit-appearance: none;
+    background-color: #eee;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9b9b9b;
+    border-radius: 4px;
+    vertical-align: middle;
+    position: relative;
+}
+.customcheckbox_notchecked {
+	border: 1px solid #8d0606;
+}
+.customcheckbox:checked {
+    background-color: #4CAF50;
+	border: 1px solid #367c39;
+}
+
+.customcheckbox::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    clip-path: polygon(
+  10% 50%,  
+  40% 80%, 
+  90% 20%, 
+  80% 10%,  
+  40% 60%,  
+  20% 40%   
+);
+    transition: transform 0.2s ease-in-out;
+}
+
+.customcheckbox:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.flag.by {
+	background-image: url("/belflag.png") !important;
+	background-repeat: no-repeat !important;
+	background-position: left top !important;
+	width: 33px !important;
+  	height: 33px !important;
+	background-size: contain !important;
+	margin-top: -17px !important;
+	margin-left: -2px !important;
+}

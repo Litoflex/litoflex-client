@@ -20,7 +20,7 @@ export default function Header() {
 
 	return (
 		<>
-			<div className="h_left bg-[#944A2E] h-20 py-3 shadow-xl px-9 flex flex-row justify-between items-center">
+			<div className="h_left bg-[#944A2E] w-screen h-20 py-3 shadow-xl px-9 flex flex-row justify-between items-center fixed top-0 z-1000">
 				<Link
 					href="/"
 					className="flex flex-row gap-3 cursor-pointer active:top-[1px] relative"
@@ -47,7 +47,7 @@ export default function Header() {
 						className={rightText({ link: true })}
 						href="#main"
 					>
-						О нас
+						Главная
 					</a>
 					<a
 						className={rightText({ link: true })}
