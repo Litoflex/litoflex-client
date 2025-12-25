@@ -64,7 +64,7 @@ export default function CatalogSection() {
 				backgroundSize: "auto",
 				scrollMarginTop: 80
 			}}
-			className="flex flex-col items-center justify-start p-10"
+			className="flex flex-col items-center justify-start p-10 s_catalog"
 		>
 			<h1 className="text-orange-800 font-bold text-5xl mb-5">
 				Каталог

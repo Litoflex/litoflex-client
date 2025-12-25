@@ -15,7 +15,7 @@ export default function MaterialApplSection() {
 			}}
 			className="flex flex-col items-start justify-start p-10 px-20"
 		>
-			<h1 className="text-black bg-[#BEAA93] font-bold text-3xl px-7 py-5 block m-auto">
+			<h1 className="text-black bg-[#BEAA93] font-bold text-3xl text-center px-7 py-5 block m-auto">
 				Применение материала
 			</h1>
 

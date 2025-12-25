@@ -274,3 +274,116 @@ textarea {
 	border-right: 25px solid transparent;
 	border-top: 30px solid #BEAA93;
 }
+.mdscad_m {
+		position: absolute;
+		top: 130px;
+		left: -180px;
+		width: 0;
+		height: 0;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-top: 30px solid #BEAA93;
+	}
+
+.mdsccpc {
+	opacity: 1;
+}
+
+.mdscad2 {
+	position: absolute;
+	top: 150px;
+	left: 207px;
+	width: 0;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-top: 50px solid #BEAA93;
+}
+
+
+
+@media (max-width: 500px) {
+	.s_catalog {
+		@apply p-5; 
+	}
+	.s_catalog .ctss {
+		@apply mb-3 py-3 px-3;
+	}
+	.s_catalog .ctss p {
+		@apply text-2xl;
+	}
+
+	#chars {
+		@apply px-8;
+	}
+	#chars h1 {
+		@apply mb-3;
+	}
+
+	#materialdesc {
+		@apply p-5;
+	}
+	#materialdesc .p1 {
+		@apply w-[100%] mt-3;
+	}
+	#materialdesc .p2 {
+		@apply w-[100%];
+	}
+	.mdsccpc {
+		opacity: 0;
+	}
+
+
+	#materialappl {
+		@apply px-5;
+	}
+	#materialappl > div {
+		@apply gap-10 flex-col px-7 mt-3;
+	}
+
+	#materireliablity {
+		@apply px-5;
+	}
+
+	#instspeed {
+		@apply px-5;
+	}
+	.mdscad21 {
+		top: 112px;
+		left: 170px;
+	}
+	.mdscad2 {
+		top: 190px;
+		left: 140px;
+	}
+
+	.p_cat {
+		@apply px-4;
+	}
+	.p_cat h1 {
+		@apply text-3xl mt-3;
+	}
+	.p_cats {
+		@apply px-0 mb-3;
+	}
+	.p_cats img {
+		width: 100px;
+		/* height: 100px; */
+	}
+	.p_cats .c_name {
+		@apply text-xl;
+	}
+	.p_cats .c_size {
+		@apply text-sm;
+	}
+	.p_cats .c_width {
+		@apply text-sm;
+	}
+
+	.p_cats .c_price {
+		@apply text-xl mr-2;
+	}
+	.p_cats .c_article {
+		@apply mr-2;
+	}
+}

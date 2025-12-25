@@ -24,6 +24,7 @@ const Slot = ({item}: {item: CatalogueItem}) => {
                 py-20 px-3 w-full h-25 cursor-pointer border-[#908E8B] border-2
                 flex flex-row justify-between items-center gap-2 rounded-2xl shadow-xl
                 mb-5
+                p_cats
             `}
         >
             <div className="flex flex-row justify-center items-center gap-1">
@@ -34,17 +35,17 @@ const Slot = ({item}: {item: CatalogueItem}) => {
                     height={150}
                 />
                 <div>
-                    <p className="font-bold text-3xl text-[#4A3E3E]">{item.name}</p>
-                    <p className="text-xl text-[#4A3E3E]">Размер <span className="font-bold">{item.size}</span></p>
-                    <p className="text-xl text-[#4A3E3E]">Толщина <span className="font-bold">{item.width}</span></p>
+                    <p className="c_name font-bold text-3xl text-[#4A3E3E]">{item.name}</p>
+                    <p className="c_size text-xl text-[#4A3E3E]">Размер <span className="font-bold">{item.size}</span></p>
+                    <p className="c_width text-xl text-[#4A3E3E]">Толщина <span className="font-bold">{item.width}</span></p>
                 </div>
            </div>
 
             <div className="flex flex-col items-end justify-between h-30 p-2">
-                <div className="bg-[#CDBFB6] text-xl rounded-xl py-1 px-4 w-fit">
+                <div className="c_article bg-[#CDBFB6] text-xl rounded-xl py-1 px-4 w-fit">
 				    {item.article}
 			    </div>
-                <p className="font-bold text-3xl text-[#4A3E3E]">{item.price}</p>
+                <p className="c_price font-bold text-3xl text-[#4A3E3E]">{item.price}</p>
             </div>
         </motion.div>
     )
@@ -68,7 +69,7 @@ export default function CategoryPage() {
 				backgroundSize: "auto",
 				scrollMarginTop: 80
 			}}
-			className="flex flex-col items-start justify-start p-10 mt-15"
+			className="flex flex-col items-start justify-start p-10 mt-15 p_cat"
         >
             <Breadcrumb
                 className="text-2xl!"

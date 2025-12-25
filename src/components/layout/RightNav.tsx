@@ -55,6 +55,9 @@ export default function RightNav({
 						<Link className={link()} href="#materireliablity">
 							Надежность материала
 						</Link>
+						<Link className={link()} href="#instspeed">
+							Быстрый и не сложный монтаж
+						</Link>
 						<Link className={link()} href="#contact">
 							Оставить заявку
 						</Link>
