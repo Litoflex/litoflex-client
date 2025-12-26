@@ -300,6 +300,16 @@ textarea {
 	border-top: 50px solid #BEAA93;
 }
 
+.mdscad3 {
+	position: absolute;
+	top: 150px;
+	left: 7px;
+	width: 0;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-top: 50px solid #BEAA93;
+}
 
 
 @media (max-width: 500px) {
@@ -355,6 +365,10 @@ textarea {
 	.mdscad2 {
 		top: 190px;
 		left: 140px;
+	}
+
+	#aboutus {
+		@apply px-5;
 	}
 
 	.p_cat {

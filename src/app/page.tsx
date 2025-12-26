@@ -1,3 +1,4 @@
+import AboutUsSection from "./AboutUsSection";
 import CatalogSection from "./CatalogSection";
 import CharsSection from "./CharsSection";
 import ContactSection from "./ContactSection";
@@ -12,6 +13,7 @@ export default function Home() {
 		<>
 			<MainSection />
 			<CatalogSection />
+			<AboutUsSection />
 			<CharsSection />
 			<MaterialDescSection />
 			<MaterialApplSection />

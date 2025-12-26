@@ -43,6 +43,9 @@ export default function RightNav({
 						<Link className={link()} href="#catalogue">
 							Каталог
 						</Link>
+						<Link className={link()} href="#aboutus">
+							О нас
+						</Link>
 						<Link className={link()} href="#chars">
 							Характеристики материала
 						</Link>

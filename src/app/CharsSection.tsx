@@ -53,7 +53,7 @@ export default function CharsSection() {
 					<span className="font-bold">Адгезия:</span> может использоваться на любых общестроительных материалах и поверхностях (штукатурка, шпатлевка, OSB, МДФ, ГКЛ, ГВЛ, СМЛ и т.д.)
 				</li>
 				<li>
-					<span className="font-bold">Срок службы:</span> <span className="font-bold text-red-700 underline">50 лет</span>
+					<span className="font-bold">Срок службы:</span> <span className="font-bold text-red-700 underline">30 лет</span>
 				</li>
 			</ul>
 		</div>
