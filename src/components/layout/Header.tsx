@@ -10,23 +10,23 @@ import NavButtons from "./NavButtons";
 const sects = [
 	{
 		title: "Главная",
-		href: "#main"
+		href: "#main",
 	},
 	{
 		title: "Каталог",
-		href: "#catalogue"
+		href: "#catalogue",
 	},
 	{
 		title: "Применение",
-		href: "#materialappl"
+		href: "#materialappl",
 	},
 	{
 		title: "Характеристики",
-		href: "#chars"
+		href: "#chars",
 	},
 	{
 		title: "О нас",
-		href: "#aboutus"
+		href: "#aboutus",
 	},
 	// {
 	// 	title: "Материал",
@@ -58,46 +58,46 @@ export default function Header() {
 			<div className="bg-[#7e4a34] w-screen h-(--h-total-size) shadow-xl fixed top-0 z-1000 flex flex-col">
 				<div className="h-(--h-main-size) w-screen py-3 px-9 flex flex-row justify-between items-center">
 					<Link
-					href="/"
-					className="h_left flex flex-row gap-3 cursor-pointer active:top-[1px] relative"
-				>
-					<Image
-						src="/logo.png"
-						alt="Litoflex logo"
-						width={75}
-						height={75}
-						priority
-					/>
-					<div className="flex flex-col gap-0">
-						<h1 className="text-[#ffeee1] font-black text-2xl p-0 m-0">
-							LITOFLEX
-						</h1>
-						<h2 className="text-[#ffeee1] text-xl p-0 my-[-5px]">
-							Гибкие решения для твёрдых идей!
-						</h2>
-					</div>
-				</Link>
-
-				<div className="h_right flex flex-row gap-4 items-center justify-end">
-					<span className="text-[#ffeee1] text-xl">
-						<BiSolidPhone
-							className="inline-block relative -top-[2px]"
-							size={25}
-						/>
-						+375-29-661-3842
-					</span>
-
-					<span className="text-[#ffeee1] text-xl">
-						|
-					</span>
-
-					<Link
-						href="#contact"
-						className="text-[#ffeee1] text-xl underline"
+						href="/"
+						className="h_left flex flex-row gap-3 cursor-pointer active:top-[1px] relative"
 					>
-						Связаться с нами
+						<Image
+							src="/logo.png"
+							alt="Litoflex logo"
+							width={75}
+							height={75}
+							priority
+						/>
+						<div className="flex flex-col gap-0">
+							<h1 className="text-[#ffeee1] font-black text-2xl p-0 m-0">
+								LITOFLEX
+							</h1>
+							<h2 className="text-[#ffeee1] text-xl p-0 my-[-5px]">
+								Гибкие решения для твёрдых идей!
+							</h2>
+						</div>
 					</Link>
-				</div>
+
+					<div className="h_right flex flex-row gap-4 items-center justify-end">
+						<span className="text-[#ffeee1] text-xl">
+							<BiSolidPhone
+								className="inline-block relative -top-[2px]"
+								size={25}
+							/>
+							+375-29-661-3842
+						</span>
+
+						<span className="text-[#ffeee1] text-xl">
+							|
+						</span>
+
+						<Link
+							href="#contact"
+							className="text-[#ffeee1] text-xl underline"
+						>
+							Связаться с нами
+						</Link>
+					</div>
 				</div>
 
 				<div className="bg-[#f4ebe4] h-(--h-nav-size) w-screen py-3 px-9 flex flex-row justify-start items-center gap-10">
@@ -105,7 +105,7 @@ export default function Header() {
 
 					<Link
 						href="#contact"
-						className="bg-[#dc601d] text-white px-3 py-3 rounded-xl shadow-2xl"
+						className="bg-[#dc601d] text-white px-3 py-3 rounded-xl shadow-xl transition active:scale-95 hover:opacity-90"
 					>
 						Получить консультацию
 					</Link>

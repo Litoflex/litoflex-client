@@ -2,104 +2,136 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Dropdown, Button } from "antd";
-import { MoreOutlined } from "@ant-design/icons";
+import { Dropdown } from "antd";
+import type { MenuProps } from "antd";
+import { BiChevronDown } from "react-icons/bi";
 
-const sects = [
-  { title: "Главная", href: "#main" },
-  { title: "Каталог", href: "#catalogue" },
-  { title: "Применение", href: "#materialappl" },
-  { title: "Характеристики", href: "#chars" },
-  { title: "О нас", href: "#aboutus" },
-  { title: "Материал", href: "#materialdesc" },
-  { title: "Надёжность", href: "#materireliablity" },
-  { title: "О монтаже", href: "#instspeed" },
-  { title: "Политика конфиденциальности", href: "/privacy-policy" },
-  { title: "Сертификаты", href: "/certificates" },
+type Sect = {
+	title: string;
+	href: string;
+	isHidden?: boolean;
+};
+const sects: Array<Sect> = [
+	{ title: "Главная", href: "#main" },
+	{ title: "Каталог", href: "#catalogue" },
+	{ title: "Применение", href: "#materialappl" },
+	{ title: "Характеристики", href: "#chars" },
+	{ title: "О нас", href: "#aboutus" },
+	{ title: "Материал", href: "#materialdesc" },
+	{ title: "Надёжность", href: "#materireliablity" },
+	{ title: "О монтаже", href: "#instspeed" },
+	{
+		title: "Политика конфиденциальности",
+		href: "/privacy-policy",
+	},
+	{ title: "Сертификаты", href: "/certificates" },
+];
+
+const iItems: MenuProps["items"] = [
+	{
+		key: "1",
+		label: (
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://www.antgroup.com"
+				className="text-black"
+			>
+				1st menu item
+			</a>
+		),
+	},
 ];
 
 export default function NavButtons() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<HTMLAnchorElement[]>([]);
-  const [visibleCount, setVisibleCount] = useState(sects.length);
+	const ref = useRef<HTMLDivElement>(null);
+	const [items, setItems] = useState<Sect[]>(sects);
 
-  useLayoutEffect(() => {
-    const calculate = () => {
-      if (!containerRef.current) return;
+	useLayoutEffect(() => {
+		if (!ref.current) return;
 
-      const containerWidth = containerRef.current.offsetWidth;
-      let usedWidth = 0;
-      let count = 0;
+		let timeoutId: number | null = null;
 
-      for (let i = 0; i < itemRefs.current.length; i++) {
-        const el = itemRefs.current[i];
-        if (!el) continue;
+		const updateVisibility = () => {
+			if (!ref.current) return;
+			const container = ref.current;
+			const containerWidth = container.clientWidth;
 
-        const width = el.offsetWidth;
-        if (usedWidth + width <= containerWidth - 60) {
-          usedWidth += width;
-          count++;
-        } else {
-          break;
-        }
-      }
+			const style = getComputedStyle(container);
+			const gap = parseFloat(style.columnGap || "0");
+			const TOLERANCE = 5;
 
-      setVisibleCount(count);
-    };
+			let totalWidth = 0;
+			const newItems = sects.map((item, index) => {
+				const child = container.children[
+					index
+				] as HTMLElement;
+				const childWidth = child.offsetWidth;
+				const widthWithGap =
+					index === 0 ? childWidth : childWidth + gap;
 
-    calculate();
+				if (
+					totalWidth + widthWithGap <=
+					containerWidth + TOLERANCE
+				) {
+					totalWidth += widthWithGap;
+					return { ...item, isHidden: false };
+				} else {
+					return { ...item, isHidden: true };
+				}
+			});
 
-    const observer = new ResizeObserver(calculate);
-    observer.observe(containerRef.current);
+			setItems(newItems);
+		};
 
-    return () => observer.disconnect();
-  }, []);
+		const debouncedUpdate = () => {
+			if (timeoutId) clearTimeout(timeoutId);
+			timeoutId = window.setTimeout(updateVisibility, 50); // задержка 50мс
+		};
 
-  const visibleItems = sects.slice(0, visibleCount);
-  const hiddenItems = sects.slice(visibleCount);
+		const observer = new ResizeObserver(debouncedUpdate);
+		observer.observe(ref.current);
 
-  return (
-    <div
-      ref={containerRef}
-      className="flex flex-row flex-1 items-center gap-10 overflow-hidden"
-    >
-      {visibleItems.map((inf, i) => (
-        <Link
-          key={inf.href}
-          href={inf.href}
-          ref={(el) => {
-            if (el) itemRefs.current[i] = el;
-          }}
-          className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
-        >
-          {inf.title}
-        </Link>
-      ))}
+		return () => {
+			observer.disconnect();
+			if (timeoutId) clearTimeout(timeoutId);
+		};
+	}, [sects]);
 
-      {hiddenItems.length > 0 && (
-        <Dropdown
-          trigger={["hover"]}
-          menu={{
-            items: hiddenItems.map((item) => ({
-              key: item.href,
-              label: (
-                <Link
-                  href={item.href}
-                  className="text-[#7e4a34] text-lg font-medium"
-                >
-                  {item.title}
-                </Link>
-              ),
-            })),
-          }}
-        >
-          <Button
-            type="text"
-            icon={<MoreOutlined />}
-            className="text-[#7e4a34]"
-          />
-        </Dropdown>
-      )}
-    </div>
-  );
+	return (
+		<div
+			ref={ref}
+			className="flex flex-row flex-1 justify-between items-center gap-10 overflow-hidden"
+		>
+			<Dropdown menu={{ items: iItems }}>
+				<Link
+					onClick={(e) => e.preventDefault()}
+					href="_blank"
+					className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
+				>
+					Раздел
+					<BiChevronDown
+						className="inline-block"
+						size={25}
+					/>
+				</Link>
+			</Dropdown>
+			{items.map((inf, i) => (
+				<Link
+					key={inf.href}
+					href={inf.href}
+					className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
+					style={{
+						visibility: inf.isHidden ? "hidden" : "visible",
+						pointerEvents: inf.isHidden ? "none" : "auto",
+						position: inf.isHidden
+							? "absolute"
+							: "relative",
+					}}
+				>
+					{inf.title}
+				</Link>
+			))}
+		</div>
+	);
 }
