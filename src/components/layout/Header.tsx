@@ -1,29 +1,65 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiSolidPhone } from "react-icons/bi";
 import { tv } from "tailwind-variants";
 import RightNav from "./RightNav";
 import Link from "next/link";
+import NavButtons from "./NavButtons";
 
-const rightText = tv({
-	base: "text-[#E6C8B2] font-semibold text-xl",
-	variants: {
-		link: {
-			true: "hover:text-[#fadfcc] transition underline",
-		},
+const sects = [
+	{
+		title: "Главная",
+		href: "#main"
 	},
-});
+	{
+		title: "Каталог",
+		href: "#catalogue"
+	},
+	{
+		title: "Применение",
+		href: "#materialappl"
+	},
+	{
+		title: "Характеристики",
+		href: "#chars"
+	},
+	{
+		title: "О нас",
+		href: "#aboutus"
+	},
+	// {
+	// 	title: "Материал",
+	// 	href: "materialdesc"
+	// },
+	// {
+	// 	title: "Надёжность",
+	// 	href: "materireliablity"
+	// },
+	// {
+	// 	title: "О монтаже",
+	// 	href: "instspeed"
+	// },
+	// {
+	// 	title: "Политика конфиденциальности",
+	// 	href: "/privacy-policy"
+	// },
+	// {
+	// 	title: "Сертификаты",
+	// 	href: "/certificates"
+	// }
+];
 
 export default function Header() {
 	const [navVisible, setNavVisible] = useState(false);
 
 	return (
 		<>
-			<div className="h_left bg-[#944A2E] w-screen h-20 py-3 shadow-xl px-9 flex flex-row justify-between items-center fixed top-0 z-1000">
-				<Link
+			<div className="bg-[#7e4a34] w-screen h-(--h-total-size) shadow-xl fixed top-0 z-1000 flex flex-col">
+				<div className="h-(--h-main-size) w-screen py-3 px-9 flex flex-row justify-between items-center">
+					<Link
 					href="/"
-					className="flex flex-row gap-3 cursor-pointer active:top-[1px] relative"
+					className="h_left flex flex-row gap-3 cursor-pointer active:top-[1px] relative"
 				>
 					<Image
 						src="/logo.png"
@@ -33,35 +69,46 @@ export default function Header() {
 						priority
 					/>
 					<div className="flex flex-col gap-0">
-						<h1 className="text-[#E6C8B2] font-black text-2xl p-0 m-0">
+						<h1 className="text-[#ffeee1] font-black text-2xl p-0 m-0">
 							LITOFLEX
 						</h1>
-						<h2 className="text-[#E6C8B2] text-xl p-0 my-[-5px]">
+						<h2 className="text-[#ffeee1] text-xl p-0 my-[-5px]">
 							Гибкие решения для твёрдых идей!
 						</h2>
 					</div>
 				</Link>
 
 				<div className="h_right flex flex-row gap-4 items-center justify-end">
-					<a
-						className={rightText({ link: true })}
-						href="#main"
+					<span className="text-[#ffeee1] text-xl">
+						<BiSolidPhone
+							className="inline-block relative -top-[2px]"
+							size={25}
+						/>
+						+375-29-661-3842
+					</span>
+
+					<span className="text-[#ffeee1] text-xl">
+						|
+					</span>
+
+					<Link
+						href="#contact"
+						className="text-[#ffeee1] text-xl underline"
 					>
-						Главная
-					</a>
-					<a
-						className={rightText({ link: true })}
-						href="#catalogue"
+						Связаться с нами
+					</Link>
+				</div>
+				</div>
+
+				<div className="bg-[#f4ebe4] h-(--h-nav-size) w-screen py-3 px-9 flex flex-row justify-start items-center gap-10">
+					<NavButtons />
+
+					<Link
+						href="#contact"
+						className="bg-[#dc601d] text-white px-3 py-3 rounded-xl shadow-2xl"
 					>
-						Каталог
-					</a>
-					<h3 className={rightText()}>+375-29-661-3842</h3>
-					<button
-						onClick={() => setNavVisible(!navVisible)}
-						className="bg-[#CC653E] hover:bg-[#bc5d3a] w-10 h-10 cursor-pointer rounded-sm transition active:scale-[90%]"
-					>
-						<BiMenu className="text-[#E6C8B2] text-4xl ml-[2px]" />
-					</button>
+						Получить консультацию
+					</Link>
 				</div>
 			</div>
 			<RightNav
