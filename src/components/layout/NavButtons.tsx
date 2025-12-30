@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Dropdown } from "antd";
+import { Dropdown, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { BiChevronDown } from "react-icons/bi";
 
@@ -46,6 +46,8 @@ const iItems: MenuProps["items"] = [
 export default function NavButtons() {
 	const ref = useRef<HTMLDivElement>(null);
 	const [items, setItems] = useState<Sect[]>(sects);
+  const [lastElement, setLastElement] = useState(0);
+  const [hiddenItems, setHiddenItems] = useState<Sect[]>([]);
 
 	useLayoutEffect(() => {
 		if (!ref.current) return;
@@ -62,6 +64,9 @@ export default function NavButtons() {
 			const TOLERANCE = 5;
 
 			let totalWidth = 0;
+      let last: number | null = null;
+      let hiddenItems: Array<Sect> = [];
+
 			const newItems = sects.map((item, index) => {
 				const child = container.children[
 					index
@@ -77,10 +82,16 @@ export default function NavButtons() {
 					totalWidth += widthWithGap;
 					return { ...item, isHidden: false };
 				} else {
+          if (last === null) {
+            last = index;
+          }
+          hiddenItems.push(item);
 					return { ...item, isHidden: true };
 				}
 			});
 
+      setHiddenItems(hiddenItems);
+      setLastElement((last !== null) ? last : -1);
 			setItems(newItems);
 		};
 
@@ -98,12 +109,28 @@ export default function NavButtons() {
 		};
 	}, [sects]);
 
+  const dropdownItems: MenuProps["items"] = hiddenItems.slice(1).map((item, ind) => (
+    {
+      key: item.href + ind,
+      label: (
+        <Link
+          href={item.href}
+          className="text-black"
+        >
+          {item.title}
+        </Link>
+      ),
+    }
+  ));
+
 	return (
 		<div
 			ref={ref}
 			className="flex flex-row flex-1 justify-between items-center gap-10 overflow-hidden"
 		>
-			<Dropdown menu={{ items: iItems }}>
+			<Dropdown
+        menu={{ items: dropdownItems }}
+      >
 				<Link
 					onClick={(e) => e.preventDefault()}
 					href="_blank"
