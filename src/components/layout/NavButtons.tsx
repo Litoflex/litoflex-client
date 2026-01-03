@@ -140,7 +140,7 @@ export default function NavButtons() {
 	})();
 
 	const l: Sect[] = [lastViewed, ...hiddenItems];
-	 const dropdownItems: MenuProps["items"] = l.slice(1).map((item, ind) => (
+	 const dropdownItems: MenuProps["items"] = l.map((item, ind) => (
     {
       key: item.href + ind,
       label: (
@@ -159,6 +159,7 @@ export default function NavButtons() {
 			menu={{ items: dropdownItems }}
 		>
 			<Link
+				onClick={e => e.preventDefault()}
 				href={lastViewed.href}
 				className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
 			>
@@ -175,13 +176,13 @@ export default function NavButtons() {
 	return (
 		<div
 			ref={ref}
-			className="flex flex-row flex-1 justify-between items-center gap-10" // overflow-hidden
+			className="flex flex-row flex-1 justify-between items-center gap-10 overflow-hidden"
 		>
 			{getItems().map((inf, i) => (
 				<Link
 					key={inf.href}
 					href={inf.href}
-					className="flex-1 w-fit whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
+					className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
 					style={{
 						visibility: inf.isHidden ? "hidden" : "visible",
 						pointerEvents: inf.isHidden ? "none" : "auto",

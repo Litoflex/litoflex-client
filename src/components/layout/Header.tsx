@@ -119,8 +119,7 @@ export default function Header() {
 							shadow-xl transition active:scale-95 hover:opacity-90
 							text-center px-3 py-3
 							text-nowrap
-							relative
-							-left-2
+							
 						`}
 					>
 						Получить консультацию
