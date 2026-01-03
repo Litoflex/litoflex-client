@@ -67,9 +67,9 @@ export default function CategoryPage() {
 					"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.7) ), url('/pattern1.png')",
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto",
-				scrollMarginTop: 80
+				// scrollMarginTop: 80
 			}}
-			className="flex flex-col items-start justify-start p-10 mt-15 p_cat"
+			className="flex flex-col items-start justify-start p-10 mt-38 p_cat"
         >
             <Breadcrumb
                 className="text-2xl!"

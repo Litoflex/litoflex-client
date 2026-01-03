@@ -23,7 +23,7 @@ export default function RightNav({
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 					onClick={() => setIsVisible(false)}
-					className="flex bg-black/30 w-full h-full fixed top-0 left-0 z-2 justify-end"
+					className="flex bg-black/30 w-full h-full fixed top-0 left-0 z-123233 justify-end"
 				>
 					<motion.div
 						key="nav"
@@ -35,33 +35,33 @@ export default function RightNav({
 							ease: "circOut",
 							duration: 0.11,
 						}}
-						className="h-full bg-white p-4 w-70 shadow-2xl mt-20"
+						className="h-full bg-white p-4 w-70 shadow-2xl mt-0"
 					>
-						<Link className={link()} href="#main">
+						<Link className={link()} href="/#main">
 							Главная
 						</Link>
-						<Link className={link()} href="#catalogue">
+						<Link className={link()} href="/#catalogue">
 							Каталог
 						</Link>
-						<Link className={link()} href="#aboutus">
+						<Link className={link()} href="/#aboutus">
 							О нас
 						</Link>
-						<Link className={link()} href="#chars">
+						<Link className={link()} href="/#chars">
 							Характеристики материала
 						</Link>
-						<Link className={link()} href="#materialdesc">
+						<Link className={link()} href="/#materialdesc">
 							Описание материала
 						</Link>
-						<Link className={link()} href="#materialappl">
+						<Link className={link()} href="/#materialappl">
 							Применение материала
 						</Link>
-						<Link className={link()} href="#materireliablity">
+						<Link className={link()} href="/#materireliablity">
 							Надежность материала
 						</Link>
-						<Link className={link()} href="#instspeed">
+						<Link className={link()} href="/#instspeed">
 							Быстрый и не сложный монтаж
 						</Link>
-						<Link className={link()} href="#contact">
+						<Link className={link()} href="/#contact">
 							Оставить заявку
 						</Link>
 						<Link className={link()} href="/privacy-policy">

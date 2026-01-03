@@ -38,10 +38,11 @@ export default function ContactSection() {
 					"linear-gradient( rgba(166,147,117, 0.42), rgba(166,147,117, 0.42) ), url('/pattern3.png')",
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto",
+				scrollMarginTop: "var(--h-total-size)"
 			}}
 			className="flex flex-col items-center justify-start p-10"
 		>
-			<h1 className="text-[#733A00] font-bold text-4xl">
+			<h1 className="text-[#733A00] font-bold text-4xl text-center">
 				Связаться с нами
 			</h1>
 			<h2 className="text-2xl mt-2 text-center">

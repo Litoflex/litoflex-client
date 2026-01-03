@@ -14,7 +14,8 @@ export default function MainSection() {
 				backgroundSize: "cover",
 				backgroundPosition: "center center",
 				backgroundRepeat: "no-repeat",
-				marginTop: 70,
+				marginTop: 71,
+				scrollMarginTop: "var(--h-total-size)"
 			}}
 			className="flex flex-col items-center justify-center"
 		>
@@ -34,7 +35,7 @@ export default function MainSection() {
 					duration: 0.9,
 					type: "spring",
 				}}
-				className="main_about bg-[#7a684bbe] py-7 px-10 max-w-300 rounded-xl backdrop-blur-sm shadow-xl"
+				className="main_about bg-[#7a684bbe] py-7 px-10 max-w-[90%] rounded-xl backdrop-blur-sm shadow-xl"
 			>
 				<p className="text-[#C9BCAF] font-medium text-2xl text-center">
 					{/* Мы работаем по стандартам компании Novak Dekor,

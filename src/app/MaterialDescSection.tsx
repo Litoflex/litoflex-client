@@ -11,11 +11,11 @@ export default function MaterialDescSection() {
 					"linear-gradient( rgba(166,147,117, 0.42), rgba(166,147,117, 0.42) ), url('/pattern3.png')",
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto",
-				scrollMarginTop: 80
+				scrollMarginTop: "var(--h-total-size)"
 			}}
 			className="flex flex-col items-start justify-start p-10 px-20"
 		>
-			<h1 className="text-black bg-[#BEAA93] relative font-bold text-3xl px-7 py-5 block m-auto">
+			<h1 className="text-black bg-[#BEAA93] relative text-center font-bold text-3xl px-7 py-5 block m-auto">
 				Описание материала
 
 				<div

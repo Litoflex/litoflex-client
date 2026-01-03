@@ -1,6 +1,8 @@
 export default function PrivacyPolicy() {
 	return (
-		<div className="p-10 flex justify-center">
+		<div style={{
+			marginTop: 160
+		}} className="p-10 flex justify-center">
 			<div className="max-w-150">
 				<h1 className="text-center text-2xl font-bold">
 					ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ПЕРСОНАЛЬНЫХ ДАННЫХ

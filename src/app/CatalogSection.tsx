@@ -62,7 +62,7 @@ export default function CatalogSection() {
 					"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.7) ), url('/pattern1.png')",
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto",
-				scrollMarginTop: 80
+				scrollMarginTop: "var(--h-total-size)"
 			}}
 			className="flex flex-col items-center justify-start p-10 s_catalog"
 		>

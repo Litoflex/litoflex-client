@@ -318,6 +318,12 @@ textarea {
 	border-top: 50px solid #BEAA93;
 }
 
+.mobile_nav {
+	display: none;
+}
+.h_right_mobile {
+	display: none;
+}
 
 @media (max-width: 500px) {
 	.s_catalog {
@@ -367,11 +373,11 @@ textarea {
 	}
 	.mdscad21 {
 		top: 112px;
-		left: 170px;
+		left: 140px;
 	}
 	.mdscad2 {
 		top: 190px;
-		left: 140px;
+		left: 109px;
 	}
 
 	#aboutus {
@@ -406,5 +412,37 @@ textarea {
 	}
 	.p_cats .c_article {
 		@apply mr-2;
+	}
+
+	.pc_nav, .h_right {
+		display: none;
+	}
+	.mobile_nav {
+		display: flex;
+	}
+	:root {
+		--h-main-size: 95px;
+		--h-nav-size: 50px;
+		--h-down-size: 10px;
+		--h-total-size: calc(var(--h-main-size) + var(--h-nav-size) + var(--h-down-size));
+	}
+	.h_left {
+		@apply gap-2;
+	}
+	.h_left img {
+		@apply w-auto h-13;
+	}
+	.h_left h1 {
+		@apply text-xl mt-0.5;
+	}
+	.h_left h2 {
+		@apply text-sm mt-0.5;
+		line-height: 1;
+	}
+	.h_right_mobile {
+		@apply flex;
+	}
+	.h_cont {
+		@apply px-3;
 	}
 }

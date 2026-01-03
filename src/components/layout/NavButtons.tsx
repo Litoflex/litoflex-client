@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Dropdown, Menu } from "antd";
+import { Dropdown } from "antd";
 import type { MenuProps } from "antd";
 import { BiChevronDown } from "react-icons/bi";
 
@@ -12,14 +12,14 @@ type Sect = {
 	isHidden?: boolean;
 };
 const sects: Array<Sect> = [
-	{ title: "Главная", href: "#main" },
-	{ title: "Каталог", href: "#catalogue" },
-	{ title: "Применение", href: "#materialappl" },
-	{ title: "Характеристики", href: "#chars" },
-	{ title: "О нас", href: "#aboutus" },
-	{ title: "Материал", href: "#materialdesc" },
-	{ title: "Надёжность", href: "#materireliablity" },
-	{ title: "О монтаже", href: "#instspeed" },
+	{ title: "Главная", href: "/#main" },
+	{ title: "Каталог", href: "/#catalogue" },
+	{ title: "Применение", href: "/#materialappl" },
+	{ title: "Характеристики", href: "/#chars" },
+	{ title: "О нас", href: "/#aboutus" },
+	{ title: "Материал", href: "/#materialdesc" },
+	{ title: "Надёжность", href: "/#materireliablity" },
+	{ title: "О монтаже", href: "/#instspeed" },
 	{
 		title: "Политика конфиденциальности",
 		href: "/privacy-policy",
@@ -27,27 +27,10 @@ const sects: Array<Sect> = [
 	{ title: "Сертификаты", href: "/certificates" },
 ];
 
-const iItems: MenuProps["items"] = [
-	{
-		key: "1",
-		label: (
-			<a
-				target="_blank"
-				rel="noopener noreferrer"
-				href="https://www.antgroup.com"
-				className="text-black"
-			>
-				1st menu item
-			</a>
-		),
-	},
-];
-
 export default function NavButtons() {
 	const ref = useRef<HTMLDivElement>(null);
 	const [items, setItems] = useState<Sect[]>(sects);
-  const [lastElement, setLastElement] = useState(0);
-  const [hiddenItems, setHiddenItems] = useState<Sect[]>([]);
+  	const [hiddenItems, setHiddenItems] = useState<Sect[]>([]);
 
 	useLayoutEffect(() => {
 		if (!ref.current) return;
@@ -64,8 +47,7 @@ export default function NavButtons() {
 			const TOLERANCE = 5;
 
 			let totalWidth = 0;
-      let last: number | null = null;
-      let hiddenItems: Array<Sect> = [];
+			let hiddenItems: Array<Sect> = [];
 
 			const newItems = sects.map((item, index) => {
 				const child = container.children[
@@ -82,16 +64,28 @@ export default function NavButtons() {
 					totalWidth += widthWithGap;
 					return { ...item, isHidden: false };
 				} else {
-          if (last === null) {
-            last = index;
-          }
-          hiddenItems.push(item);
 					return { ...item, isHidden: true };
 				}
 			});
 
-      setHiddenItems(hiddenItems);
-      setLastElement((last !== null) ? last : -1);
+			let firstHiddenInd = -1;
+			for (let i = 0; i < newItems.length; i++) {
+				if (newItems[i].isHidden) {
+					firstHiddenInd = i;
+					hiddenItems.push(newItems[i]);
+					break;
+				}
+			}
+			if (firstHiddenInd != -1) {
+				for (let i = firstHiddenInd+1; i < newItems.length; i++) {
+					if (newItems[i]) {
+						newItems[i].isHidden = true;
+						hiddenItems.push(newItems[i]);
+					}
+				}
+			}
+
+      		setHiddenItems(hiddenItems);
 			setItems(newItems);
 		};
 
@@ -109,7 +103,44 @@ export default function NavButtons() {
 		};
 	}, [sects]);
 
-  const dropdownItems: MenuProps["items"] = hiddenItems.slice(1).map((item, ind) => (
+  const getItems = (): Sect[] => {
+	let a = items;
+	if (hiddenItems.length === 0) {
+		return a;
+	}
+
+	let last = 0;
+	for (let i = 0; i < items.length; i++) {
+		if (items[i].isHidden) {
+			last = i-1;
+			break;
+		}
+	}
+	if (last >= 0) {
+		a = JSON.parse(JSON.stringify(a));
+		a[last].isHidden = true;
+	}
+
+	return a;
+  }
+
+  const renderDropdown = () => {
+	if (hiddenItems.length === 0) {
+		return null;
+	}
+
+	const lastViewed = ((): Sect => {
+		let last;
+		for (let i = 0; i < items.length; i++) {
+			if (!items[i].isHidden) {
+				last = items[i];
+			}
+		}
+		return last || items[0];
+	})();
+
+	const l: Sect[] = [lastViewed, ...hiddenItems];
+	 const dropdownItems: MenuProps["items"] = l.slice(1).map((item, ind) => (
     {
       key: item.href + ind,
       label: (
@@ -124,30 +155,33 @@ export default function NavButtons() {
   ));
 
 	return (
+		<Dropdown
+			menu={{ items: dropdownItems }}
+		>
+			<Link
+				href={lastViewed.href}
+				className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
+			>
+				{lastViewed.title}
+				<BiChevronDown
+					className="inline-block"
+					size={25}
+				/>
+			</Link>
+		</Dropdown>
+	)
+  }
+
+	return (
 		<div
 			ref={ref}
-			className="flex flex-row flex-1 justify-between items-center gap-10 overflow-hidden"
+			className="flex flex-row flex-1 justify-between items-center gap-10" // overflow-hidden
 		>
-			<Dropdown
-        menu={{ items: dropdownItems }}
-      >
-				<Link
-					onClick={(e) => e.preventDefault()}
-					href="_blank"
-					className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
-				>
-					Раздел
-					<BiChevronDown
-						className="inline-block"
-						size={25}
-					/>
-				</Link>
-			</Dropdown>
-			{items.map((inf, i) => (
+			{getItems().map((inf, i) => (
 				<Link
 					key={inf.href}
 					href={inf.href}
-					className="whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
+					className="flex-1 w-fit whitespace-nowrap text-[#7e4a34] text-2xl hover:underline font-medium"
 					style={{
 						visibility: inf.isHidden ? "hidden" : "visible",
 						pointerEvents: inf.isHidden ? "none" : "auto",
@@ -159,6 +193,9 @@ export default function NavButtons() {
 					{inf.title}
 				</Link>
 			))}
+			{
+				renderDropdown()
+			}
 		</div>
 	);
 }

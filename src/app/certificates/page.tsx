@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Certifactes() {
 	return (
-		<div className="p-7 flex flex-col items-center">
+		<div className="p-7 flex flex-col items-center mt-[160px]">
 			<h1 className="font-bold text-2xl text-center">
 				Сертификаты:
 			</h1>
