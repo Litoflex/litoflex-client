@@ -2,6 +2,7 @@ import AboutUsSection from "./AboutUsSection";
 import CatalogSection from "./CatalogSection";
 import CharsSection from "./CharsSection";
 import ContactSection from "./ContactSection";
+import ContsSection from "./ContsSection";
 import InstSpeedSection from "./InstSpeedSection";
 import MainSection from "./MainSection";
 import MaterialApplSection from "./MaterialApplSection";
@@ -19,6 +20,7 @@ export default function Home() {
 			<MaterialApplSection />
 			<MaterialReliablitySection />
 			<InstSpeedSection />
+			<ContsSection />
 			<ContactSection />
 		</>
 	);

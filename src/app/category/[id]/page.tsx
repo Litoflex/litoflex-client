@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { useParams } from 'next/navigation';
 import { motion } from "motion/react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const Slot = ({item}: {item: CatalogueItem}) => {
     return (
@@ -54,10 +55,14 @@ const Slot = ({item}: {item: CatalogueItem}) => {
 export default function CategoryPage() {
     const params = useParams();
     const cat: Catalogue|undefined = catalogueData.filter(p => p.key === params.id)[0];
-    
+
     if (!cat) {
         return notFound();
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     
     return (
         <div
@@ -67,7 +72,7 @@ export default function CategoryPage() {
 					"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.7) ), url('/pattern1.png')",
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto",
-				// scrollMarginTop: 80
+				scrollMarginTop: 0
 			}}
 			className="flex flex-col items-start justify-start p-10 mt-38 p_cat"
         >

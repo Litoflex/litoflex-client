@@ -56,11 +56,10 @@ export default function ContactSection() {
 						Наши контакты
 					</h1>
 					<h2 className="font-medium text-lg mt-1">
-						+375-29-661-3842
+						+375 (29) 661-38-42
 					</h2>
 					<h2 className="font-medium text-sm">
-						Адрес: Производство: Алтайский край, г. Барнаул,
-						ул. Южные Мастерские,14 Б
+						Адрес Производства: Республика Беларусь, г. Минск, ул. Ольшевского, 10
 					</h2>
 				</div>
 				<div className="flex-1">

@@ -23,6 +23,7 @@ const CatalogueSlot = ({ data }: { data: Catalogue }) => {
 				backgroundRepeat: "repeat",
 				backgroundSize: "auto"
 			}}
+			scroll={false}
 			className={`
 				py-5 px-5 w-full h-25 cursor-pointer border-[#908E8B] border-2
 				flex flex-row justify-between items-center gap-2 rounded-2xl shadow-xl

@@ -17,6 +17,7 @@ const sects: Array<Sect> = [
 	{ title: "Применение", href: "/#materialappl" },
 	{ title: "Характеристики", href: "/#chars" },
 	{ title: "О нас", href: "/#aboutus" },
+	{ title: "Контакты", href: "/#conts" },
 	{ title: "Материал", href: "/#materialdesc" },
 	{ title: "Надёжность", href: "/#materireliablity" },
 	{ title: "О монтаже", href: "/#instspeed" },

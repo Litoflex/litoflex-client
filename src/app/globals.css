@@ -446,3 +446,11 @@ textarea {
 		@apply px-3;
 	}
 }
+
+#conts > div > section {
+	@apply flex flex-row justify-between w-280;
+}
+
+#conts > div > section p:first-child {
+	@apply font-medium;
+}
