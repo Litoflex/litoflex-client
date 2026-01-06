@@ -19,7 +19,7 @@ export default function ContsSection() {
 				Контакты
 			</h1>
 
-			<div className="flex flex-col items-center justify-center w-full mt-10">
+			<div className="flex flex-col items-center justify-center w-full mt-5">
 				<section>
 					<p className="text-2xl">
 						Адрес:
