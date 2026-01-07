@@ -1,0 +1,53 @@
+~~~ gibkiy-kirpich ~~~
+Название: Гибкий Кирпич
+Изображение: /imgs/gibkiy_kirpich/item.png
+Товары:
+	1. Кирпич первый
+		Артикль: G01
+		Изображение: /imgs/gibkiy_kirpich/item.png
+		Размер: 950x550мм
+		Цена: 1 250 руб
+		Ширина: 3-5 мм
+	2. Кирпич второй
+		Артикль: G02
+		Изображение: /imgs/gibkiy_kirpich/item.png
+		Размер: 950x550мм
+		Цена: 1 250 руб
+		Ширина: 3-5 мм
+~~~ gibkiy-kirpich ~~~
+
+~~~ gibkiy-kamen ~~~
+Название: Гибкий Камень
+Изображение: /imgs/gibkiy_kamen/item.png
+Товары:
+	1. Камень первый
+		Артикль: G01
+		Изображение: /imgs/gibkiy_kamen/item.png
+		Размер: 950x550мм
+		Цена: 1 250 руб
+		Ширина: 3-5 мм
+	2. Камень второй
+		Артикль: G02
+		Изображение: /imgs/gibkiy_kamen/item.png
+		Размер: 950x550мм
+		Цена: 1 250 руб
+		Ширина: 3-5 мм
+~~~ gibkiy-kamen ~~~
+
+~~~ termopaneli-pod-kirpich ~~~
+Название: Термопанели под кирпич
+Изображение: /imgs/termopaneli_pod_kirpich/item.png
+Товары:
+	1. Термопанель первая
+		Артикль: G01
+		Изображение: /imgs/termopaneli_pod_kirpich/item.png
+		Размер: 950x550мм
+		Цена: 1 250 руб
+		Ширина: 3-5 мм
+	2. Термопанель вторая
+		Артикль: G02
+		Изображение: /imgs/termopaneli_pod_kirpich/item.png
+		Размер: 950x550мм
+		Цена: 1 250 руб
+		Ширина: 3-5 мм
+~~~ termopaneli-pod-kirpich ~~~
