@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[85437,["/_next/static/chunks/0883fdf9fdf7cdd1.js","/_next/static/chunks/4b5a7032ac3d5066.js","/_next/static/chunks/d3c13e3dd7406fe5.js","/_next/static/chunks/33e7887a68fc9f71.js","/_next/static/chunks/c230c74a4ca4b540.js"],"Image"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c416b03d70cdc505.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"7wE1z_XWa0QmrMac9D-uk","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"p-7 flex flex-col items-center mt-[160px]","children":[["$","h1",null,{"className":"font-bold text-2xl text-center","children":"Сертификаты:"}],["$","div",null,{"className":"mt-2","children":[["$","$L2","0",{"width":500,"height":500,"src":"/1.jpg","alt":"Сертификат №1"}],["$","$L2","1",{"width":500,"height":500,"src":"/2.jpg","alt":"Сертификат №2"}],["$","$L2","2",{"width":500,"height":500,"src":"/3.jpg","alt":"Сертификат №3"}],["$","$L2","3",{"width":500,"height":500,"src":"/4.jpg","alt":"Сертификат №4"}],["$","$L2","4",{"width":500,"height":500,"src":"/5.jpg","alt":"Сертификат №5"}]]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
