@@ -12,6 +12,7 @@ export default function ContactSection() {
 	const [shAddClass, setShAddClass] = useState(false);
 	const [isCanGet, setIsCanGet] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [messageApi, contextHolder] = message.useMessage();
 
 	const onConfirm = useCallback(async () => {
 		const data = {phone, name, comment, politic};
@@ -23,29 +24,27 @@ export default function ContactSection() {
 		setLoading(true);
     	try {
 			const res = await fetch('/api/telegram', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          phone: phone,
-          comment: comment,
-        }),
-      });
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name: name,
+					phone: phone,
+					comment: comment,
+				}),
+			});
 
-      const data = await res.json();
-
-      if (res.ok && data.success) {
-        message.success('Заявка успешно отправлена ✅');
-      } else {
-        // если сервер вернул ошибку 400/500 или data.ok=false
-        message.error(data.error || 'Не удалось отправить заявку ❌');
-      }
+			const data = await res.json();
+			if (res.ok && data.success) {
+				messageApi.success('Заявка успешно отправлена!');
+			} else {
+				messageApi.error(data.error || 'Не удалось отправить заявку ❌');
+			}
+			setName(''); setPhone(''); setPolitic(false); setComment('');
 		} catch (err) {
-		// если fetch упал (сеть, CORS и т.д.)
-		message.error('Ошибка сети или сервера ❌');
-		console.error(err);
+			messageApi.error('Ошибка сети или сервера.');
+			console.error(err);
 		} finally {
-		setLoading(false);
+			setLoading(false);
 		}
 	}, [name, phone, politic]);
 
@@ -72,6 +71,7 @@ export default function ContactSection() {
 			}}
 			className="flex flex-col items-center justify-start p-10"
 		>
+			{contextHolder}
 			<h1 className="text-[#733A00] font-bold text-4xl text-center">
 				Связаться с нами
 			</h1>

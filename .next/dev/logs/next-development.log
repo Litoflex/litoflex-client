@@ -1,34 +1,18 @@
-[00:00:02.076] Server  LOG      ✓ Ready in 1485ms
-[00:00:07.555] Server  LOG      ○ Compiling / ...
-[00:00:14.102] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:32.313] Server  LOG      ✓ Compiled in 59ms
-[00:02:39.956] Server  LOG      ✓ Compiled in 43ms
-[00:02:52.114] Server  LOG      ✓ Compiled in 124ms
-[00:03:12.563] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:12.563] Browser WARN    Image with src "/imgs/gibkiy_kirpich/item.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:12.563] Browser WARN    Image with src "/imgs/gibkiy_kamen/item.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:12.563] Browser WARN    Image with src "/imgs/termopaneli_pod_kirpich/item.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:01.736] Server  LOG        Reload env: .env.local
-[00:05:02.024] Server  LOG      ✓ Compiled in 1ms
-[00:05:50.130] Server  LOG        Reload env: .env.local
-[00:05:50.187] Server  LOG      ✓ Compiled in 17ms
-[00:06:56.515] Server  LOG        Reload env: .env
-[00:11:26.123] Server  LOG      ✓ Compiled in 258ms
-[00:11:41.006] Server  LOG      ✓ Compiled in 60ms
-[00:11:45.186] Server  LOG      ✓ Compiled in 35ms
-[00:11:52.715] Server  LOG      ✓ Compiled in 48ms
-[00:12:03.119] Server  LOG      ✓ Compiled in 39ms
-[00:12:15.456] Server  LOG      ✓ Compiled in 37ms
-[00:13:00.943] Server  LOG      ✓ Compiled in 40ms
-[00:13:08.618] Server  LOG      ✓ Compiled in 41ms
-[00:13:13.628] Server  LOG      ✓ Compiled in 37ms
-[00:13:20.371] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:20.691] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:14:28.856] Server  LOG      ✓ Compiled in 43ms
-[00:14:34.134] Server  LOG      ✓ Compiled in 36ms
-[00:14:41.575] Server  LOG      ✓ Compiled in 35ms
-[00:14:48.063] Server  LOG      ✓ Compiled in 33ms
-[00:14:55.675] Server  LOG      ✓ Compiled in 33ms
-[00:15:22.428] Browser ERROR   Warning: [antd: compatible] antd v5 support React is 16 ~ 18. see https://u.ant.design/v5-for-19 for compatible.
-[00:15:26.524] Browser ERROR   Warning: [antd: message] Static function can not consume context like dynamic theme. Please use 'App' component instead.
-[00:17:03.138] Server  LOG      ✓ Compiled in 35ms
+[00:00:01.376] Server  LOG      ✓ Ready in 905ms
+[00:00:05.243] Server  LOG      ○ Compiling / ...
+[00:00:11.187] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.005] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:12.005] Browser WARN    Image with src "/imgs/gibkiy_kirpich/item.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:12.005] Browser WARN    Image with src "/imgs/gibkiy_kamen/item.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:12.005] Browser WARN    Image with src "/imgs/termopaneli_pod_kirpich/item.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:49.119] Browser ERROR   Warning: [antd: compatible] antd v5 support React is 16 ~ 18. see https://u.ant.design/v5-for-19 for compatible.
+[00:00:49.736] Browser ERROR   Warning: [antd: message] Static function can not consume context like dynamic theme. Please use 'App' component instead.
+[00:03:03.510] Server  LOG      ✓ Compiled in 52ms
+[00:07:56.937] Server  LOG      ✓ Compiled in 44ms
+[00:08:08.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:08.619] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:08:11.932] Browser ERROR   Warning: [antd: compatible] antd v5 support React is 16 ~ 18. see https://u.ant.design/v5-for-19 for compatible.
+[00:08:45.706] Server  LOG      ✓ Compiled in 41ms
+[00:09:26.248] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:26.554] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:32.638] Browser ERROR   Warning: [antd: compatible] antd v5 support React is 16 ~ 18. see https://u.ant.design/v5-for-19 for compatible.

@@ -514,6 +514,7 @@ function ContactSection() {
     const [shAddClass, setShAddClass] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isCanGet, setIsCanGet] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [messageApi, contextHolder] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].useMessage();
     const onConfirm = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async ()=>{
         const data = {
             phone,
@@ -541,14 +542,16 @@ function ContactSection() {
             });
             const data = await res.json();
             if (res.ok && data.success) {
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].success('Заявка успешно отправлена ✅');
+                messageApi.success('Заявка успешно отправлена!');
             } else {
-                // если сервер вернул ошибку 400/500 или data.ok=false
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].error(data.error || 'Не удалось отправить заявку ❌');
+                messageApi.error(data.error || 'Не удалось отправить заявку ❌');
             }
+            setName('');
+            setPhone('');
+            setPolitic(false);
+            setComment('');
         } catch (err) {
-            // если fetch упал (сеть, CORS и т.д.)
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].error('Ошибка сети или сервера ❌');
+            messageApi.error('Ошибка сети или сервера.');
             console.error(err);
         } finally{
             setLoading(false);
@@ -580,6 +583,7 @@ function ContactSection() {
         },
         className: "flex flex-col items-center justify-start p-10",
         children: [
+            contextHolder,
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "text-[#733A00] font-bold text-4xl text-center",
                 children: "Связаться с нами"
@@ -784,7 +788,7 @@ function ContactSection() {
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/ContactSection.tsx",
-        lineNumber: 62,
+        lineNumber: 61,
         columnNumber: 3
     }, this);
 }
