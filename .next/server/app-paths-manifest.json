@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/telegram/route": "app/api/telegram/route.js",
   "/category/[id]/page": "app/category/[id]/page.js",
   "/certificates/page": "app/certificates/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
