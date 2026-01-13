@@ -25,7 +25,7 @@ export default function MaterialApplSection() {
 					<ol className="text-2xl">
 						<li style={{
 							listStyleType: "decimal"
-						}}>Акцентные стены в гостиной, <br/>спальне, кухне</li>
+						}}>Акцентные стены в гостиной, <br/>спальне, кухне.</li>
 						<li style={{
 							listStyleType: "decimal"
 						}}>Отделка каминов, барных стоек,проемов, санузлов.</li>
