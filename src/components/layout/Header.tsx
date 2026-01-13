@@ -93,7 +93,8 @@ export default function Header() {
 								className="inline-block relative -top-[2px]"
 								size={25}
 							/>
-							+375 (29) 661-38-42
+							+375 (29) 661-38-42 <br/>
+							+375 (29) 302-74-35
 						</span>
 
 						<span className="text-[#ffeee1] text-xl">
@@ -132,7 +133,8 @@ export default function Header() {
 							className="inline-block relative -top-[2px]"
 							size={25}
 						/>
-						+375 (29) 661-38-42
+						+375 (29) 661-38-42 <br/>
+						+375 (29) 302-74-35
 					</span>
 
 					<span className="text-[#7e4a34] text-lg">

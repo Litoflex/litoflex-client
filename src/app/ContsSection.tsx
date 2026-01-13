@@ -34,7 +34,8 @@ export default function ContsSection() {
 						Мобильный телефон:
 					</p>
 					<p className="text-2xl">
-						+375 (29) 661-38-42
+						+375 (29) 661-38-42 <br/>
+						+375 (29) 302-74-35
 					</p>
 				</section>
 

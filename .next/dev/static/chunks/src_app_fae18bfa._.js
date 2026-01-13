@@ -520,10 +520,13 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$button$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__Button$3e$__ = __turbopack_context__.i("[project]/node_modules/antd/es/button/index.js [app-client] (ecmascript) <locals> <export default as Button>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__ = __turbopack_context__.i("[project]/node_modules/antd/es/message/index.js [app-client] (ecmascript) <export default as message>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$phone$2d$input$2d$2$2f$lib$2f$lib$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-phone-input-2/lib/lib.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 function ContactSection() {
@@ -534,8 +537,9 @@ function ContactSection() {
     const [politic, setPolitic] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [shAddClass, setShAddClass] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isCanGet, setIsCanGet] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const onConfirm = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
-        "ContactSection.useCallback[onConfirm]": ()=>{
+        "ContactSection.useCallback[onConfirm]": async ()=>{
             const data = {
                 phone,
                 name,
@@ -546,8 +550,37 @@ function ContactSection() {
                 setShAddClass(true);
                 return;
             }
+            ;
+            setLoading(true);
+            try {
+                const res = await fetch('/api/telegram', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        comment: comment
+                    })
+                });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].success('Заявка успешно отправлена ✅');
+                } else {
+                    // если сервер вернул ошибку 400/500 или data.ok=false
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].error(data.error || 'Не удалось отправить заявку ❌');
+                }
+            } catch (err) {
+                // если fetch упал (сеть, CORS и т.д.)
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$message$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__message$3e$__["message"].error('Ошибка сети или сервера ❌');
+                console.error(err);
+            } finally{
+                setLoading(false);
+            }
         }
     }["ContactSection.useCallback[onConfirm]"], [
+        name,
         phone,
         politic
     ]);
@@ -580,7 +613,7 @@ function ContactSection() {
                 children: "Связаться с нами"
             }, void 0, false, {
                 fileName: "[project]/src/app/ContactSection.tsx",
-                lineNumber: 45,
+                lineNumber: 75,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -589,14 +622,14 @@ function ContactSection() {
                     "Задайте вопрос об услугах, ценах и заказах материалов. ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                         fileName: "[project]/src/app/ContactSection.tsx",
-                        lineNumber: 50,
+                        lineNumber: 80,
                         columnNumber: 17
                     }, this),
                     "Перезвоним в этот же день!"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/ContactSection.tsx",
-                lineNumber: 48,
+                lineNumber: 78,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -610,15 +643,23 @@ function ContactSection() {
                                 children: "Наши контакты"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 55,
+                                lineNumber: 85,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "font-medium text-lg mt-1",
-                                children: "+375 (29) 661-38-42"
-                            }, void 0, false, {
+                                children: [
+                                    "+375 (29) 661-38-42 ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                        fileName: "[project]/src/app/ContactSection.tsx",
+                                        lineNumber: 89,
+                                        columnNumber: 27
+                                    }, this),
+                                    "+375 (29) 302-74-35"
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 58,
+                                lineNumber: 88,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -626,13 +667,13 @@ function ContactSection() {
                                 children: "Адрес Производства: Республика Беларусь, г. Минск, ул. Ольшевского, 10"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 61,
+                                lineNumber: 92,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/ContactSection.tsx",
-                        lineNumber: 54,
+                        lineNumber: 84,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -643,7 +684,7 @@ function ContactSection() {
                                 children: "Ваш телефон"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 66,
+                                lineNumber: 97,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$phone$2d$input$2d$2$2f$lib$2f$lib$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -673,7 +714,7 @@ function ContactSection() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 69,
+                                lineNumber: 100,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -684,7 +725,7 @@ function ContactSection() {
                                 onChange: (e)=>setName(e.target.value)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 94,
+                                lineNumber: 125,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -694,7 +735,7 @@ function ContactSection() {
                                 onChange: (e)=>setComment(e.target.value)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 101,
+                                lineNumber: 132,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -710,7 +751,7 @@ function ContactSection() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/ContactSection.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 139,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -724,7 +765,7 @@ function ContactSection() {
                                                 children: "политикой"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 150,
                                                 columnNumber: 8
                                             }, this),
                                             " ",
@@ -732,16 +773,19 @@ function ContactSection() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/ContactSection.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 148,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 107,
+                                lineNumber: 138,
                                 columnNumber: 6
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$antd$2f$es$2f$button$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__Button$3e$__["Button"], {
+                                loading: loading,
+                                color: "volcano",
+                                variant: "solid",
                                 onClick: onConfirm,
                                 className: `transition active:scale-90 cursor-pointer w-full
 						text-white py-3 px-4 rounded-lg mt-2
@@ -750,29 +794,29 @@ function ContactSection() {
                                 children: "Получить консультацию"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContactSection.tsx",
-                                lineNumber: 128,
+                                lineNumber: 159,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/ContactSection.tsx",
-                        lineNumber: 65,
+                        lineNumber: 96,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/ContactSection.tsx",
-                lineNumber: 53,
+                lineNumber: 83,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/ContactSection.tsx",
-        lineNumber: 32,
+        lineNumber: 62,
         columnNumber: 3
     }, this);
 }
-_s(ContactSection, "cO7u6KRjhfnW7WOBPHXVtG3F19M=");
+_s(ContactSection, "YQJPaNRkhZyxQzZ7mUKovKM1ZS0=");
 _c = ContactSection;
 var _c;
 __turbopack_context__.k.register(_c, "ContactSection");
@@ -850,8 +894,16 @@ function ContsSection() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-2xl",
-                                children: "+375 (29) 661-38-42"
-                            }, void 0, false, {
+                                children: [
+                                    "+375 (29) 661-38-42 ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                        fileName: "[project]/src/app/ContsSection.tsx",
+                                        lineNumber: 37,
+                                        columnNumber: 27
+                                    }, this),
+                                    "+375 (29) 302-74-35"
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/app/ContsSection.tsx",
                                 lineNumber: 36,
                                 columnNumber: 6
@@ -869,7 +921,7 @@ function ContsSection() {
                                 children: "Электронная почта:"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContsSection.tsx",
-                                lineNumber: 42,
+                                lineNumber: 43,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -878,13 +930,13 @@ function ContsSection() {
                                 children: "info@litoflex.by"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ContsSection.tsx",
-                                lineNumber: 45,
+                                lineNumber: 46,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/ContsSection.tsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 5
                     }, this)
                 ]
@@ -1197,7 +1249,7 @@ function MaterialApplSection() {
                                                 lineNumber: 28,
                                                 columnNumber: 38
                                             }, this),
-                                            "спальне, кухне"
+                                            "спальне, кухне."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/MaterialApplSection.tsx",

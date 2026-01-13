@@ -341,10 +341,6 @@
     pointer-events: auto;
   }
 
-  .pointer-events-none {
-    pointer-events: none;
-  }
-
   .visible {
     visibility: visible;
   }
@@ -786,6 +782,10 @@
     background-color: #a52c2c;
   }
 
+  .bg-\[\#A52C2C\]\! {
+    background-color: #a52c2c !important;
+  }
+
   .bg-\[\#A69375\] {
     background-color: #a69375;
   }
@@ -1149,6 +1149,12 @@
   @media (hover: hover) {
     .hover\:bg-\[\#942828\]:hover {
       background-color: #942828;
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-\[\#942828\]\!:hover {
+      background-color: #942828 !important;
     }
   }
 

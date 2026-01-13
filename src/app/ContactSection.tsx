@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { Button, message } from 'antd';
 import PhoneInput from "react-phone-input-2";
 
 export default function ContactSection() {
@@ -10,14 +11,43 @@ export default function ContactSection() {
 	const [politic, setPolitic] = useState(false);
 	const [shAddClass, setShAddClass] = useState(false);
 	const [isCanGet, setIsCanGet] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-	const onConfirm = useCallback(() => {
+	const onConfirm = useCallback(async () => {
 		const data = {phone, name, comment, politic};
 		if (!politic) {
 			setShAddClass(true);
 			return;
+		};
+
+		setLoading(true);
+    	try {
+			const res = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          comment: comment,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        message.success('Заявка успешно отправлена ✅');
+      } else {
+        // если сервер вернул ошибку 400/500 или data.ok=false
+        message.error(data.error || 'Не удалось отправить заявку ❌');
+      }
+		} catch (err) {
+		// если fetch упал (сеть, CORS и т.д.)
+		message.error('Ошибка сети или сервера ❌');
+		console.error(err);
+		} finally {
+		setLoading(false);
 		}
-	}, [phone, politic]);
+	}, [name, phone, politic]);
 
 	
 	useEffect(() => {
@@ -56,7 +86,8 @@ export default function ContactSection() {
 						Наши контакты
 					</h1>
 					<h2 className="font-medium text-lg mt-1">
-						+375 (29) 661-38-42
+						+375 (29) 661-38-42 <br/>
+						+375 (29) 302-74-35
 					</h2>
 					<h2 className="font-medium text-sm">
 						Адрес Производства: Республика Беларусь, г. Минск, ул. Ольшевского, 10
@@ -125,7 +156,7 @@ export default function ContactSection() {
 							конфиденциальности
 						</span>
 					</div>
-					<button onClick={onConfirm}
+					<Button loading={loading} color="volcano" variant="solid" onClick={onConfirm}
 					className={
 						`transition active:scale-90 cursor-pointer w-full
 						text-white py-3 px-4 rounded-lg mt-2
@@ -133,7 +164,16 @@ export default function ContactSection() {
 						`
 					}>
 						Получить консультацию
-					</button>
+					</Button>
+					{/* <button onClick={onConfirm}
+					className={
+						`transition active:scale-90 cursor-pointer w-full
+						text-white py-3 px-4 rounded-lg mt-2
+						${isCanGet ? "bg-[#A52C2C] hover:bg-[#942828]" : "bg-[#312c2c] hover:bg-[#1f1c1c]"}
+						`
+					}>
+						Получить консультацию
+					</button> */}
 				</div>
 			</div>
 		</div>

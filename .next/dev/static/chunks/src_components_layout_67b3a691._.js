@@ -571,7 +571,13 @@ function Header() {
                                                 lineNumber: 92,
                                                 columnNumber: 8
                                             }, this),
-                                            "+375 (29) 661-38-42"
+                                            "+375 (29) 661-38-42 ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                fileName: "[project]/src/components/layout/Header.tsx",
+                                                lineNumber: 96,
+                                                columnNumber: 28
+                                            }, this),
+                                            "+375 (29) 302-74-35"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/Header.tsx",
@@ -583,7 +589,7 @@ function Header() {
                                         children: "|"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/Header.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 100,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -592,7 +598,7 @@ function Header() {
                                         children: "Связаться с нами"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/Header.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 104,
                                         columnNumber: 7
                                     }, this)
                                 ]
@@ -612,7 +618,7 @@ function Header() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$NavButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/src/components/layout/Header.tsx",
-                                lineNumber: 113,
+                                lineNumber: 114,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -627,13 +633,13 @@ function Header() {
                                 children: "Получить консультацию"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/layout/Header.tsx",
-                                lineNumber: 115,
+                                lineNumber: 116,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/layout/Header.tsx",
-                        lineNumber: 112,
+                        lineNumber: 113,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -647,14 +653,20 @@ function Header() {
                                         size: 25
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/Header.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 132,
                                         columnNumber: 7
                                     }, this),
-                                    "+375 (29) 661-38-42"
+                                    "+375 (29) 661-38-42 ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                        fileName: "[project]/src/components/layout/Header.tsx",
+                                        lineNumber: 136,
+                                        columnNumber: 27
+                                    }, this),
+                                    "+375 (29) 302-74-35"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/layout/Header.tsx",
-                                lineNumber: 130,
+                                lineNumber: 131,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -662,7 +674,7 @@ function Header() {
                                 children: "|"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/layout/Header.tsx",
-                                lineNumber: 138,
+                                lineNumber: 140,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -671,13 +683,13 @@ function Header() {
                                 children: "Связаться с нами"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/layout/Header.tsx",
-                                lineNumber: 142,
+                                lineNumber: 144,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/layout/Header.tsx",
-                        lineNumber: 129,
+                        lineNumber: 130,
                         columnNumber: 5
                     }, this)
                 ]
@@ -691,7 +703,7 @@ function Header() {
                 setIsVisible: setNavVisible
             }, void 0, false, {
                 fileName: "[project]/src/components/layout/Header.tsx",
-                lineNumber: 150,
+                lineNumber: 152,
                 columnNumber: 4
             }, this)
         ]
