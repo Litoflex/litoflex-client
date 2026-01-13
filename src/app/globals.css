@@ -466,4 +466,14 @@ textarea {
 	#conts > div {
 		@apply items-start;
 	}
+
+	#main > h1 {
+		@apply mb-3 mt-15;
+	}
+	#main > div {
+		@apply px-5 max-w-[95%];
+	}
+	#main > div p {
+		@apply text-xl;
+	}
 }

@@ -164,7 +164,7 @@
     :root, :host {
       --color-red-700: lab(40.4273% 67.2623 53.7441);
       --color-orange-800: lab(37.1566% 46.6433 50.5562);
-      --color-gray-500: lab(47.7841% -.393182 -10.0268);
+      --color-gray-500: lab(47.7841% -.393212 -10.0268);
       --color-gray-700: lab(27.1134% -.956401 -12.3224);
     }
   }
@@ -419,6 +419,14 @@
 @layer components;
 
 @layer utilities {
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
+
+  .pointer-events-none {
+    pointer-events: none;
+  }
+
   .visible {
     visibility: visible;
   }
@@ -713,6 +721,10 @@
     cursor: pointer;
   }
 
+  .touch-none {
+    touch-action: none;
+  }
+
   .resize-none {
     resize: none;
   }
@@ -791,6 +803,10 @@
 
   .overflow-hidden {
     overflow: hidden;
+  }
+
+  .overflow-y-scroll {
+    overflow-y: scroll;
   }
 
   .rounded-2xl {
@@ -1597,6 +1613,21 @@ input[type="text"], textarea {
 
   #conts > div {
     align-items: flex-start;
+  }
+
+  #main > h1 {
+    margin-top: calc(var(--spacing) * 15);
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+
+  #main > div {
+    max-width: 95%;
+    padding-inline: calc(var(--spacing) * 5);
+  }
+
+  #main > div p {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
 }
 

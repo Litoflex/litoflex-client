@@ -23,7 +23,7 @@ export default function RightNav({
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 					onClick={() => setIsVisible(false)}
-					className="flex bg-black/30 w-full h-full fixed top-0 left-0 z-123233 justify-end"
+					className="flex bg-black/30 w-full h-full fixed top-0 left-0 z-123233 justify-end pointer-events-auto touch-none"
 				>
 					<motion.div
 						key="nav"
@@ -35,7 +35,7 @@ export default function RightNav({
 							ease: "circOut",
 							duration: 0.11,
 						}}
-						className="h-full bg-white p-4 w-70 shadow-2xl mt-0"
+						className="h-full bg-white p-4 w-70 shadow-2xl mt-0 overflow-y-scroll"
 					>
 						<Link className={link()} href="/#main">
 							Главная
