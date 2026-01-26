@@ -62,13 +62,7 @@
           "search": ""
         }
       ],
-      "remotePatterns": [
-        {
-          "protocol": "https",
-          "hostname": "f2.lpcdn.site",
-          "pathname": "/**"
-        }
-      ],
+      "remotePatterns": [],
       "qualities": [
         75
       ],
@@ -88,7 +82,7 @@
     "productionBrowserSourceMaps": false,
     "excludeDefaultMomentLocales": true,
     "reactProductionProfiling": false,
-    "reactStrictMode": null,
+    "reactStrictMode": true,
     "reactMaxHeadersLength": 6000,
     "httpAgentOptions": {
       "keepAlive": true
@@ -105,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\Intel\\Desktop\\litoflex-client",
+    "outputFileTracingRoot": "C:\\Users\\ma540\\OneDrive\\Робочий стіл\\Projects\\litoflex-client",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -296,11 +290,11 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "C:\\Users\\Intel\\Desktop\\litoflex-client"
+      "root": "C:\\Users\\ma540\\OneDrive\\Робочий стіл\\Projects\\litoflex-client"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "C:\\Users\\Intel\\Desktop\\litoflex-client",
+  "appDir": "C:\\Users\\ma540\\OneDrive\\Робочий стіл\\Projects\\litoflex-client",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

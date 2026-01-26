@@ -1,0 +1,3 @@
+module.exports=[3363,a=>{"use strict";var b=a.i(7997);function c(){return(0,b.jsxs)("div",{style:{height:"calc(100%)",background:"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.7) ), url('/pattern1.png')",backgroundRepeat:"repeat",backgroundSize:"auto",scrollMarginTop:80},className:"flex flex-col items-center justify-center p-10 mt-15",children:[(0,b.jsx)("h1",{className:"text-6xl font-bold text-center",children:"404"}),(0,b.jsx)("h1",{className:"text-center text-xl",children:"Такой страницы не существует."})]})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_app_not-found_tsx_3f23d179._.js.map
