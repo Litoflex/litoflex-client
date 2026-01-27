@@ -1,7 +1,7 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/certificates/page.js")
 R.c("server/chunks/ssr/[root-of-the-server]__46cdefd2._.js")
 R.c("server/chunks/ssr/_a3b9117b._.js")
-R.c("server/chunks/ssr/_822205ea._.js")
+R.c("server/chunks/ssr/_5286b46f._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__57ec4c1a._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__bcb9a799._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_982e7503._.js")
@@ -11,6 +11,7 @@ R.c("server/chunks/ssr/[root-of-the-server]__33000ea3._.js")
 R.c("server/chunks/ssr/src_app_not-found_tsx_3f23d179._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_2fffaa3a._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_15817684.js")
+R.c("server/chunks/ssr/src_app_certificates_layout_tsx_91b5b35d._.js")
 R.c("server/chunks/ssr/_next-internal_server_app_certificates_page_actions_06ece5bd.js")
-R.m(82529)
-module.exports=R.m(82529).exports
+R.m(28445)
+module.exports=R.m(28445).exports

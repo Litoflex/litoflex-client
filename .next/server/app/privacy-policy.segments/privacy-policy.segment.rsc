@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c416b03d70cdc505.js"],"default"]
 3:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c416b03d70cdc505.js"],"default"]
-0:{"buildId":"mxKv8EB_cXw5y9bwcxX7W","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"uXrYSPrcP4w6Rb_UJ9PbR","rsc":["$","$1","c",{"children":[null,[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная\",\"item\":\"https://www.litoflex.by/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Политика конфиденциальности\",\"item\":\"https://www.litoflex.by/privacy-policy\"}]}"}}],["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]]}],"loading":null,"isPartial":false}
