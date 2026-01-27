@@ -1,1 +1,6 @@
-{}
+{
+  "/api/telegram/route": "app/api/telegram/route.js",
+  "/certificates/page": "app/certificates/page.js",
+  "/page": "app/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js"
+}

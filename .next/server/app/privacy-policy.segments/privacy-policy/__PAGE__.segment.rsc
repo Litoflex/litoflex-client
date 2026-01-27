@@ -1,5 +1,9 @@
 1:"$Sreact.fragment"
-2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c416b03d70cdc505.js"],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"buildId":"uXrYSPrcP4w6Rb_UJ9PbR","rsc":["$","$1","c",{"children":[["$","div",null,{"style":{"marginTop":160},"className":"p-10 flex justify-center","children":["$","div",null,{"className":"max-w-150","children":[["$","h1",null,{"className":"text-center text-2xl font-bold","children":"ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ПЕРСОНАЛЬНЫХ ДАННЫХ"}],["$","div",null,{"className":"mt-5","children":[["$","b",null,{"children":"1. Общие положения"}],["$","br",null,{}],"Настоящая Политика обработки персональных данных (далее — «Политика») определяет порядок обработки и защиты персональных данных физических лиц (далее — «Пользователи» или «Субъекты персональных данных») индивидуальным предпринимателем ЛЮБИМЫХ СЕРГЕЙ НИКОЛАЕВИЧ (далее — «Оператор»).",["$","b",null,{"children":"Оператор персональных данных:"}],"Индивидуальный предприниматель ЛЮБИМЫХ СЕРГЕЙ НИКОЛАЕВИЧ",["$","br",null,{}],"ИНН: 222204175723",["$","br",null,{}],"ОГРНИП: 323220200014552",["$","br",null,{}],"Адрес регистрации: Российская Федерация, 656000, Алтайский край, г. Барнаул",["$","br",null,{}],"Электронная почта: iplyubimykh_sn@mail.ru",["$","br",null,{}],"Телефон: +7 (952) 008-58-08",["$","br",null,{}],"1.1. Настоящая Политика применяется ко всей информации, которую Оператор может получить о Субъектах персональных данных при использовании интернет-сайта https://novakdecor22.ru, а также при заключении, исполнении и прекращении гражданско-правовых договоров."]}]]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
-4:null
+2:I[47257,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ClientPageRoot"]
+3:I[16424,["/_next/static/chunks/78df0eac6588ae3a.js"],"default"]
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"buildId":"dlrKIgFCx829hI5CzGZ1u","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/78df0eac6588ae3a.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+4:{}
+5:{}
+8:null
