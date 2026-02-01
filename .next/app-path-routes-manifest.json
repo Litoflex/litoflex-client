@@ -4,6 +4,7 @@
   "/api/telegram/route": "/api/telegram",
   "/category/[id]/page": "/category/[id]",
   "/certificates/page": "/certificates",
+  "/faq/page": "/faq",
   "/favicon.ico/route": "/favicon.ico",
   "/page": "/",
   "/privacy-policy/page": "/privacy-policy"

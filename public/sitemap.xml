@@ -5,7 +5,7 @@
   <!-- Главная страница -->
   <url>
     <loc>https://www.litoflex.by/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -17,7 +17,7 @@
   <!-- Каталог (якорь) -->
   <url>
     <loc>https://www.litoflex.by/#catalogue</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -25,7 +25,7 @@
   <!-- О нас -->
   <url>
     <loc>https://www.litoflex.by/#about</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,7 +33,7 @@
   <!-- Характеристики -->
   <url>
     <loc>https://www.litoflex.by/#chars</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -41,7 +41,15 @@
   <!-- Контакты -->
   <url>
     <loc>https://www.litoflex.by/#contacts</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- FAQ - Часто задаваемые вопросы -->
+  <url>
+    <loc>https://www.litoflex.by/faq</loc>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,7 +57,7 @@
   <!-- Сертификаты -->
   <url>
     <loc>https://www.litoflex.by/certificates</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -57,7 +65,7 @@
   <!-- Политика конфиденциальности -->
   <url>
     <loc>https://www.litoflex.by/privacy-policy</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -26,6 +26,7 @@ const sects: Array<Sect> = [
 		href: "/privacy-policy",
 	},
 	{ title: "Сертификаты", href: "/certificates" },
+	{ title: "FAQ", href: "/faq" },
 ];
 
 export default function NavButtons() {
