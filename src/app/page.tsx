@@ -589,7 +589,7 @@ export default function HomePage() {
         <div className="footer-content">
           <div className="footer-brand">
             <h2>LITOFLEX</h2>
-            <p>Внешняя и внутренняя отделка и утепление фасадов в Республике Беларусь и странах СНГ.</p>
+            <p>Внешняя и внутренняя отделка и утепление фасадов в Республике Беларусь.</p>
           </div>
           <nav className="footer-column">
             <h4>Навигация</h4>
@@ -599,6 +599,7 @@ export default function HomePage() {
               <li><a href="#about">О нас</a></li>
               <li><a href="#contacts">Контакты</a></li>
               <li><Link href="/certificates">Сертификаты</Link></li>
+              <li><Link href="/faq">FAQ</Link></li>
             </ul>
           </nav>
           <nav className="footer-column">

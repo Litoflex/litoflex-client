@@ -67,6 +67,9 @@ export default function RightNav({
 						<Link className={link()} href="/#contact">
 							Оставить заявку
 						</Link>
+						<Link className={link()} href="/faq">
+							FAQ
+						</Link>
 						<Link className={link()} href="/privacy-policy">
 							Политика конфиденциальности
 						</Link>
