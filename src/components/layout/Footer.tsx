@@ -5,15 +5,26 @@ export default function Footer() {
 				<h1>© Компания Litoflex, 2025</h1>
 				<h1>
 					Внешняя и Внутренняя Отделка и Утепление фасадов в Республике Беларусь
-					и странах СНГ
 				</h1>
 			</div>
-			<div className="bg-[#821212] p-8">
+			<div className="bg-[#821212] p-8 flex flex-row items-center gap-6">
 				<a
 					className="underline text-[#EED2D2]"
 					href="/privacy-policy"
 				>
 					Политика конфиденциальности
+				</a>
+				<a
+					className="underline text-[#EED2D2]"
+					href="/faq"
+				>
+					FAQ
+				</a>
+				<a
+					className="underline text-[#EED2D2]"
+					href="/certificates"
+				>
+					Сертификаты
 				</a>
 			</div>
 		</div>
