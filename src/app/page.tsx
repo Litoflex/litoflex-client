@@ -400,14 +400,14 @@ export default function HomePage() {
             <header className="section-header animate-on-scroll">
               <div className="section-tag">Преимущества</div>
               <h2 className="section-title">Почему выбирают <strong>нас</strong></h2>
-              <p className="section-subtitle">Работаем напрямую от производителя</p>
+              
             </header>
             <div className="benefits-grid">
               {[
-                { num: '01', title: 'Собственное производство', desc: 'Работаем без посредников — честные цены напрямую от завода' },
+                { num: '01', title: 'Собственное производство', desc: 'Работаем без посредников — честные цены напрямую от производителя' },
                 { num: '02', title: 'Любой объём', desc: 'От 1 м² для ремонта до крупных партий для застройщиков' },
                 { num: '03', title: 'Сложные формы', desc: 'Углы, арки, колонны — материал гнётся как вам нужно' },
-                { num: '04', title: 'Полный сервис', desc: 'Консультация и доставка по всей Беларуси' },
+                { num: '04', title: 'Удобный сервис', desc: 'Консультация и доставка по всей Беларуси' },
               ].map((benefit, i) => (
                 <article key={i} className={`benefit-card animate-on-scroll animate-delay-${i + 1}`}>
                   <div className="benefit-number">{benefit.num}</div>
