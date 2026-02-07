@@ -9,7 +9,7 @@ export default function HomePage() {
   const [backToTopVisible, setBackToTopVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('stone');
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
-  const [formData, setFormData] = useState({ name: '', phone: '', privacy: false });
+  const [formData, setFormData] = useState({ name: '', phone: '', comment: '', privacy: false });
   const [phoneFlag, setPhoneFlag] = useState('BY');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -108,12 +108,13 @@ export default function HomePage() {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
+          comment: formData.comment,
         }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', phone: '', privacy: false });
+        setFormData({ name: '', phone: '', comment: '', privacy: false });
       } else {
         setSubmitStatus('error');
       }
@@ -126,45 +127,41 @@ export default function HomePage() {
 
   // Order via Telegram
   const orderViaTelegram = (product: typeof products[0]) => {
-    const message = `Здравствуйте! Интересует товар:\n\n📦 ${product.name}\n🔢 Артикул: ${product.art}\n📐 Размер: ${product.size}\n💰 Цена: ${product.price} BYN/м²`;
+    const message = `Здравствуйте! Интересует товар:\n\n🔢 Артикул: ${product.art}\n📐 Размер: ${product.size}\n📏 Толщина: ${product.thickness}\n💰 Цена: ${product.price} ${product.unit}`;
     window.open(`https://t.me/litoflexby?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   // Categories
   const categories = [
-    { id: 'stone', name: 'Гибкий камень', icon: '🪨', price: 45 },
-    { id: 'brick', name: 'Гибкий кирпич', icon: '🧱', price: 52 },
+    { id: 'stone', name: 'Гибкий камень', icon: '🪨', price: 60 },
+    { id: 'brick', name: 'Гибкий кирпич', icon: '🧱', price: 65 },
   ];
 
-  // Products data - расширенный каталог с novakdecor.ru
+  // Products data
   const products = [
-    // ==================== ГИБКИЙ КАМЕНЬ (45 BYN/м²) ====================
-    { id: 1, category: 'stone', art: 'KGS-01', name: 'Песчаник Сахара', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png' },
-    { id: 2, category: 'stone', art: 'KGS-02', name: 'Песчаник Терра', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c0850d2f2933f3fbac98a7bc0a2121c3.png' },
-    { id: 3, category: 'stone', art: 'KGS-03', name: 'Песчаник Охра', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1167e04643ae79cb6904fab30cd433b6.png' },
-    { id: 4, category: 'stone', art: 'KGS-04', name: 'Песчаник Беж', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/0f5337ce2c0d2245279631f862a0b6b3.png' },
-    { id: 5, category: 'stone', art: 'KGS-05', name: 'Песчаник Крем', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7ed06c207598bc2fde8f969294ff379b.png' },
-    { id: 6, category: 'stone', art: 'KGS-06', name: 'Песчаник Слоновая кость', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1cdd55208b89c1a2c77db57b470b731d.png' },
-    { id: 7, category: 'stone', art: 'KGS-07', name: 'Песчаник Серый', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/97b661b66a385e185a5a62b8dd991c56.png' },
-    { id: 8, category: 'stone', art: 'KGS-08', name: 'Песчаник Графит', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/25a5ab0ce02e37065df69db80a93ba21.png' },
-    { id: 9, category: 'stone', art: 'KMK-01', name: 'Кварц Белый', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png' },
-    { id: 10, category: 'stone', art: 'KMK-02', name: 'Кварц Жемчуг', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c7a60d8bf52d9b9175d913a5e0027238.png' },
-    { id: 11, category: 'stone', art: 'KMK-03', name: 'Кварц Персик', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/101a4d888dbee04bddffd921ff154ec1.png' },
-    { id: 12, category: 'stone', art: 'KNT-01', name: 'Сланец Натуральный', size: '950×550 мм', price: 45, image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png' },
+    // ==================== ГИБКИЙ КАМЕНЬ (60 BYN/м²) ====================
+    { id: 1, category: 'stone', art: 'KGS-01', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png' },
+    { id: 2, category: 'stone', art: 'KGS-02', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c0850d2f2933f3fbac98a7bc0a2121c3.png' },
+    { id: 3, category: 'stone', art: 'KGS-03', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1167e04643ae79cb6904fab30cd433b6.png' },
+    { id: 4, category: 'stone', art: 'KGS-04', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/0f5337ce2c0d2245279631f862a0b6b3.png' },
+    { id: 5, category: 'stone', art: 'KGS-05', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7ed06c207598bc2fde8f969294ff379b.png' },
+    { id: 6, category: 'stone', art: 'KGS-06', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1cdd55208b89c1a2c77db57b470b731d.png' },
+    { id: 7, category: 'stone', art: 'KGS-07', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/97b661b66a385e185a5a62b8dd991c56.png' },
+    { id: 8, category: 'stone', art: 'KGS-08', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/25a5ab0ce02e37065df69db80a93ba21.png' },
+    { id: 9, category: 'stone', art: 'KMK-01', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png' },
+    { id: 10, category: 'stone', art: 'KMK-02', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c7a60d8bf52d9b9175d913a5e0027238.png' },
+    { id: 11, category: 'stone', art: 'KMK-03', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/101a4d888dbee04bddffd921ff154ec1.png' },
+    { id: 12, category: 'stone', art: 'KNT-01', size: '950×550 мм', thickness: '1.5 мм', price: 60, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png' },
 
-    // ==================== ГИБКИЙ КИРПИЧ (52 BYN/м²) ====================
-    { id: 13, category: 'brick', art: 'GK-0100', name: 'Кирпич Классик Белый', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
-    { id: 14, category: 'brick', art: 'GK-0200', name: 'Кирпич Классик Айвори', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
-    { id: 15, category: 'brick', art: 'GK-0300', name: 'Кирпич Классик Песочный', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
-    { id: 16, category: 'brick', art: 'GK-0400', name: 'Кирпич Классик Терракот', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
-    { id: 17, category: 'brick', art: 'GK-0500', name: 'Кирпич Классик Красный', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
-    { id: 18, category: 'brick', art: 'GK-0600', name: 'Кирпич Классик Бордо', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
-    { id: 19, category: 'brick', art: 'GK-0700', name: 'Кирпич Классик Коричневый', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
-    { id: 20, category: 'brick', art: 'GK-0800', name: 'Кирпич Классик Серый', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
-    { id: 21, category: 'brick', art: 'GR-0100', name: 'Кирпич Рустик Белый', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/ecc6b9b08072800e87c070b409d7002c.png' },
-    { id: 22, category: 'brick', art: 'GR-0400', name: 'Кирпич Рустик Терракот', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/c70a59edc6255953b39e09950880e594.png' },
-    { id: 23, category: 'brick', art: 'GB-0100', name: 'Кирпич Баварский Микс', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3f8c728bffc3c6b1279533808a2f5858.png' },
-    { id: 24, category: 'brick', art: 'GB-0300', name: 'Кирпич Баварский Классик', size: '1000×600 мм', price: 52, image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/514bbba1609bb42442da922ec919925b.png' },
+    // ==================== ГИБКИЙ КИРПИЧ (65 BYN/м²) ====================
+    { id: 13, category: 'brick', art: 'GK-0100', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
+    { id: 14, category: 'brick', art: 'GK-0200', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
+    { id: 15, category: 'brick', art: 'GK-0300', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
+    { id: 16, category: 'brick', art: 'GK-0400', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
+    { id: 17, category: 'brick', art: 'GK-0500', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
+    { id: 18, category: 'brick', art: 'GK-0600', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
+    { id: 19, category: 'brick', art: 'GK-0700', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
+    { id: 20, category: 'brick', art: 'GK-0800', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
   ];
 
   const filteredProducts = products.filter(p => p.category === activeCategory);
@@ -178,7 +175,7 @@ export default function HomePage() {
             <img src="https://www.litoflex.by/logo.png" alt="LITOFLEX логотип" className="logo-img" width={50} height={50} />
             <div className="logo-text">
               <h1>LITOFLEX</h1>
-              <span>Гибкие решения для твёрдых идей</span>
+              <span>Гибкие решения для твёрдых идей!</span>
             </div>
           </a>
           
@@ -325,19 +322,34 @@ export default function HomePage() {
                   onClick={() => setSelectedProduct(product)}
                 >
                   <div className="product-image">
-                    <img src={product.image} alt={product.name} loading="lazy" />
+                    <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
                     <span className="product-article">{product.art}</span>
-                    <h3 className="product-name">{product.name}</h3>
                     <div className="product-details">
                       <span className="product-size">{product.size}</span>
-                      <span className="product-price">{product.price} BYN/м²</span>
+                      <span className="product-size">Толщина: {product.thickness}</span>
+                      <span className="product-price">{product.price} {product.unit}</span>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
+
+            {/* Brick per-piece notice */}
+            {activeCategory === 'brick' && (
+              <div className="brick-piece-banner">
+                <div className="brick-piece-banner-glow"></div>
+                <div className="brick-piece-banner-content">
+                  <div className="brick-piece-banner-icon">🧱</div>
+                  <div className="brick-piece-banner-text">
+                    <h4>Одна штука — тоже заказ!</h4>
+                    <p>Гибкий кирпич продаётся поштучно: <strong>2,5 BYN за элемент</strong> 240×60×3 мм. Акцентная стена, камин, балкон, ниша, обрамление зеркала или арки — покупайте ровно столько, сколько нужно!</p>
+                  </div>
+                  <a href="#contact" className="brick-piece-banner-btn">Заказать</a>
+                </div>
+              </div>
+            )}
 
 
           </div>
@@ -349,19 +361,22 @@ export default function HomePage() {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="modal-close" onClick={() => setSelectedProduct(null)}>✕</button>
               <div className="modal-image">
-                <img src={selectedProduct.image} alt={selectedProduct.name} />
+                <img src={selectedProduct.image} alt={selectedProduct.art} />
               </div>
               <div className="modal-info">
                 <span className="modal-article">{selectedProduct.art}</span>
-                <h3 className="modal-name">{selectedProduct.name}</h3>
                 <div className="modal-specs">
                   <div className="spec-row">
                     <span className="spec-label">Размер:</span>
                     <span className="spec-value">{selectedProduct.size}</span>
                   </div>
                   <div className="spec-row">
+                    <span className="spec-label">Толщина:</span>
+                    <span className="spec-value">{selectedProduct.thickness}</span>
+                  </div>
+                  <div className="spec-row">
                     <span className="spec-label">Цена:</span>
-                    <span className="spec-value price">{selectedProduct.price} BYN/м²</span>
+                    <span className="spec-value price">{selectedProduct.price} {selectedProduct.unit}</span>
                   </div>
                 </div>
                 <button className="btn btn-large btn-full" onClick={() => orderViaTelegram(selectedProduct)}>
@@ -444,7 +459,7 @@ export default function HomePage() {
                 { value: '<1%', label: 'Водопоглощение' },
                 { value: '100+', label: 'Циклов морозостойкости' },
                 { value: '-60°...+150°C', label: 'Диапазон температур' },
-                { value: '2-4 мм', label: 'Толщина материала' },
+                { value: '1.5-4 мм', label: 'Толщина материала' },
                 { value: '3-5 кг/м²', label: 'Вес на м²' },
                 { value: '30+ лет', label: 'Срок службы' },
               ].map((char, i) => (
@@ -549,13 +564,24 @@ export default function HomePage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        placeholder="+375 (29) 123-45-67"
+                        placeholder="+375 (__) ___-__-__"
                         required
                         value={formData.phone}
                         onChange={handlePhoneChange}
                         onFocus={handlePhoneFocus}
                       />
                     </div>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="comment">Комментарий</label>
+                    <textarea
+                      id="comment"
+                      name="comment"
+                      placeholder="Пожелания к заказу (необязательно)"
+                      rows={3}
+                      value={formData.comment}
+                      onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+                    />
                   </div>
                   <div className="checkbox-group">
                     <input
@@ -599,7 +625,7 @@ export default function HomePage() {
               <li><a href="#about">О нас</a></li>
               <li><a href="#contacts">Контакты</a></li>
               <li><Link href="/certificates">Сертификаты</Link></li>
-              <li><Link href="/faq">FAQ</Link></li>
+              <li><Link href="/faq">Вопросы и Ответы</Link></li>
             </ul>
           </nav>
           <nav className="footer-column">
