@@ -162,6 +162,13 @@ export default function HomePage() {
     { id: 18, category: 'brick', art: 'GK-0600', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
     { id: 19, category: 'brick', art: 'GK-0700', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
     { id: 20, category: 'brick', art: 'GK-0800', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
+    { id: 21, category: 'brick', art: 'GK-0900', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/af77e4626bbefc24d66e3b97c1f58057.png' },
+    { id: 22, category: 'brick', art: 'GK-1101', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/529d4fd9b15f0cd1678a6c719e09b6e1.png' },
+    { id: 23, category: 'brick', art: 'GK-1200', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3a17052edb1f5cacbf8a662689cc55e7.png' },
+    { id: 24, category: 'brick', art: 'GK-1400', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/5b98eda6cc189c62685acf46a653c5c6.png' },
+    { id: 25, category: 'brick', art: 'GK-1402', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d4df50ec4eab85f7db7fc39faf6e8f4e.png' },
+    { id: 26, category: 'brick', art: 'GK-1503', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d211d12b167d1584157630e6643bfaf6.png' },
+    { id: 27, category: 'brick', art: 'GK-1800', size: '1100×550 мм', thickness: '3 мм', price: 65, unit: 'BYN/м²', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/be1d4590baa5e51034dad239b8507afe.png' },
   ];
 
   const filteredProducts = products.filter(p => p.category === activeCategory);
