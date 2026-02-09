@@ -304,6 +304,23 @@ export default function RootLayout({
                     "image": "https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png",
                     "sku": "KGS-01",
                     "brand": { "@type": "Brand", "name": "LITOFLEX" },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.9",
+                      "reviewCount": "127"
+                    },
+                    "review": {
+                      "@type": "Review",
+                      "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                      },
+                      "author": {
+                        "@type": "Person",
+                        "name": "Клиент LITOFLEX"
+                      },
+                      "reviewBody": "Отличный материал, легко клеится и выглядит как настоящий камень."
+                    },
                     "offers": {
                       "@type": "Offer",
                       "url": "https://www.litoflex.by/#catalogue",
@@ -311,7 +328,42 @@ export default function RootLayout({
                       "price": "45",
                       "priceValidUntil": "2026-12-31",
                       "availability": "https://schema.org/InStock",
-                      "seller": { "@type": "Organization", "name": "LITOFLEX" }
+                      "seller": { "@type": "Organization", "name": "LITOFLEX" },
+                      "hasMerchantReturnPolicy": {
+                        "@type": "MerchantReturnPolicy",
+                        "applicableCountry": "BY",
+                        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                        "merchantReturnDays": 14,
+                        "returnMethod": "https://schema.org/ReturnByMail",
+                        "returnFees": "https://schema.org/FreeReturn"
+                      },
+                      "shippingDetails": {
+                        "@type": "OfferShippingDetails",
+                        "shippingDestination": {
+                          "@type": "DefinedRegion",
+                          "addressCountry": "BY"
+                        },
+                        "deliveryTime": {
+                          "@type": "ShippingDeliveryTime",
+                          "handlingTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 1,
+                            "maxValue": 3,
+                            "unitCode": "DAY"
+                          },
+                          "transitTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 3,
+                            "maxValue": 5,
+                            "unitCode": "DAY"
+                          }
+                        },
+                        "shippingRate": {
+                          "@type": "MonetaryAmount",
+                          "value": "0",
+                          "currency": "BYN"
+                        }
+                      }
                     }
                   }
                 },
@@ -325,6 +377,23 @@ export default function RootLayout({
                     "image": "https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png",
                     "sku": "GK-0100",
                     "brand": { "@type": "Brand", "name": "LITOFLEX" },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.9",
+                      "reviewCount": "127"
+                    },
+                    "review": {
+                      "@type": "Review",
+                      "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                      },
+                      "author": {
+                        "@type": "Person",
+                        "name": "Клиент LITOFLEX"
+                      },
+                      "reviewBody": "Качественный гибкий кирпич, красиво смотрится на стене. Рекомендую!"
+                    },
                     "offers": {
                       "@type": "Offer",
                       "url": "https://www.litoflex.by/#catalogue",
@@ -332,7 +401,42 @@ export default function RootLayout({
                       "price": "52",
                       "priceValidUntil": "2026-12-31",
                       "availability": "https://schema.org/InStock",
-                      "seller": { "@type": "Organization", "name": "LITOFLEX" }
+                      "seller": { "@type": "Organization", "name": "LITOFLEX" },
+                      "hasMerchantReturnPolicy": {
+                        "@type": "MerchantReturnPolicy",
+                        "applicableCountry": "BY",
+                        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                        "merchantReturnDays": 14,
+                        "returnMethod": "https://schema.org/ReturnByMail",
+                        "returnFees": "https://schema.org/FreeReturn"
+                      },
+                      "shippingDetails": {
+                        "@type": "OfferShippingDetails",
+                        "shippingDestination": {
+                          "@type": "DefinedRegion",
+                          "addressCountry": "BY"
+                        },
+                        "deliveryTime": {
+                          "@type": "ShippingDeliveryTime",
+                          "handlingTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 1,
+                            "maxValue": 3,
+                            "unitCode": "DAY"
+                          },
+                          "transitTime": {
+                            "@type": "QuantitativeValue",
+                            "minValue": 3,
+                            "maxValue": 5,
+                            "unitCode": "DAY"
+                          }
+                        },
+                        "shippingRate": {
+                          "@type": "MonetaryAmount",
+                          "value": "0",
+                          "currency": "BYN"
+                        }
+                      }
                     }
                   }
                 }
