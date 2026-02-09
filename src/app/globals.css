@@ -1640,6 +1640,10 @@ footer {
     .mobile-menu-btn { display: flex; }
     .mobile-nav { display: block; }
 
+    .header-cta .btn {
+        display: none;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1714,6 +1718,15 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .footer-brand p {
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .footer-column ul {
+        align-items: center;
     }
 
     .footer-bottom {
@@ -1882,9 +1895,9 @@ footer {
 }
 
 .product-article {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--orange);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.5px;
 }
 
@@ -1897,12 +1910,13 @@ footer {
 }
 
 .product-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 0.75rem;
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--gray-100);
+    align-items: center;
 }
 
 .product-card .product-size {
@@ -1912,9 +1926,12 @@ footer {
 }
 
 .product-card .product-price {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--orange);
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 0.25rem;
 }
 
 /* Catalogue CTA */

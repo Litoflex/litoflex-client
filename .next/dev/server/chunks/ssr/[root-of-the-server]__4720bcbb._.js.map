@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ma540/OneDrive/%D0%A0%D0%BE%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB/Projects/litoflex-client/src/app/category/%5Bid%5D/page.tsx"],"sourcesContent":["import { Breadcrumb } from \"antd\";\r\nimport Link from \"next/link\";\r\n\r\ntype PageProps = {\r\n    params: {\r\n        id: string;\r\n    };\r\n};\r\n\r\nexport default async function CategoryPage({params}: PageProps) {\r\n    console.log(params)\r\n    return (\r\n        <div className=\"mt-50\">\r\n            {/* <Breadcrumb\r\n                items={[\r\n                    {\r\n                        title: <Link href=\"/\">Главная</Link>\r\n                    },\r\n                    {\r\n                        title: <Link href=\"/#catalogue\">Каталог</Link>\r\n                    },\r\n                    {\r\n                        title: <Link href={`/category/${params.id}`}>{params.id}</Link>\r\n                    }\r\n                ]}\r\n            /> */}\r\n            <h1>{JSON.stringify(params)}</h1>\r\n        </div>\r\n    );\r\n}"],"names":[],"mappings":";;;;;;AASe,eAAe,aAAa,EAAC,MAAM,EAAY;IAC1D,QAAQ,GAAG,CAAC;IACZ,qBACI,8OAAC;QAAI,WAAU;kBAcX,cAAA,8OAAC;sBAAI,KAAK,SAAS,CAAC;;;;;;;;;;;AAGhC","debugId":null}}]
-}

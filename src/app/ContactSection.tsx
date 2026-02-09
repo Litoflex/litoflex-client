@@ -23,13 +23,16 @@ export default function ContactSection() {
 
 		setLoading(true);
     	try {
-			const res = await fetch('/api/telegram', {
+			const res = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
+					access_key: '550ec955-d551-4eb3-a82b-f4ae3c23ebe5',
+					subject: `Заявка с сайта LITOFLEX — ${name}`,
+					from_name: 'LITOFLEX Сайт',
 					name: name,
 					phone: phone,
-					comment: comment,
+					comment: comment || '—',
 				}),
 			});
 
@@ -37,7 +40,7 @@ export default function ContactSection() {
 			if (res.ok && data.success) {
 				messageApi.success('Заявка успешно отправлена!');
 			} else {
-				messageApi.error(data.error || 'Не удалось отправить заявку ❌');
+				messageApi.error('Не удалось отправить заявку. Свяжитесь с нами напрямую.');
 			}
 			setName(''); setPhone(''); setPolitic(false); setComment('');
 		} catch (err) {

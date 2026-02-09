@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Intel/Desktop/litoflex-client/src/app/not-found.tsx"],"sourcesContent":["export default function NotFound() {\r\n    return (\r\n       <div\r\n            style={{\r\n\t\t\t\theight: \"calc(100%)\",\r\n\t\t\t\tbackground:\r\n\t\t\t\t\t\"linear-gradient( rgba(208,179,148, 0.4), rgba(208,179,148, 0.7) ), url('/pattern1.png')\",\r\n\t\t\t\tbackgroundRepeat: \"repeat\",\r\n\t\t\t\tbackgroundSize: \"auto\",\r\n\t\t\t\tscrollMarginTop: 80\r\n\t\t\t}}\r\n\t\t\tclassName=\"flex flex-col items-center justify-center p-10 mt-15\"\r\n        >   \r\n            <h1 className=\"text-6xl font-bold text-center\">404</h1>\r\n            <h1 className=\"text-center text-xl\">Такой страницы не существует.</h1>\r\n        </div>\r\n    )\r\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACG,8OAAC;QACI,OAAO;YACf,QAAQ;YACR,YACC;YACD,kBAAkB;YAClB,gBAAgB;YAChB,iBAAiB;QAClB;QACA,WAAU;;0BAED,8OAAC;gBAAG,WAAU;0BAAiC;;;;;;0BAC/C,8OAAC;gBAAG,WAAU;0BAAsB;;;;;;;;;;;;AAGhD","debugId":null}}]
-}

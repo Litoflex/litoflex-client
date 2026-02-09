@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ma540/OneDrive/%D0%A0%D0%BE%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB/Projects/litoflex-client/src/app/admin/i/page.tsx"],"sourcesContent":["\"use client\";\r\n\r\nexport default function AdminMainPage() {\r\n\treturn (\r\n\t\t<h1 className=\"text-center font-bold text-2xl\">\r\n\t\t\t~ Выберите категорию ~\r\n\t\t</h1>\r\n\t);\r\n}\r\n"],"names":[],"mappings":";;;;;AAAA;;AAEe,SAAS;IACvB,qBACC,6LAAC;QAAG,WAAU;kBAAiC;;;;;;AAIjD;KANwB","debugId":null}}]
-}
