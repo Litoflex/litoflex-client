@@ -1767,9 +1767,7 @@ footer {
     }
     .hero-buttons { justify-content: center; }
     .hero-visual { 
-        width: 100%;
-        max-width: 380px;
-        margin: 0 auto;
+        display: none;
     }
     .hero-promo-number { font-size: 4rem; }
     .hero-promo-content { padding: 2rem 1.5rem 1.5rem; }
