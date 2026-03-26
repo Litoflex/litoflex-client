@@ -1,0 +1,32 @@
+# Robots.txt для LITOFLEX
+# https://www.litoflex.by
+
+User-agent: *
+Allow: /
+
+# Разрешаем индексацию всех страниц
+Allow: /certificates
+Allow: /privacy-policy
+
+# Блокируем служебные файлы
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://www.litoflex.by/sitemap.xml
+
+# Специальные правила для основных поисковиков
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: YandexImages
+Allow: /

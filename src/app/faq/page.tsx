@@ -1,0 +1,390 @@
+"use client";
+
+import { useState } from "react";
+
+const faqData = [
+  {
+    category: "О продукте",
+    questions: [
+      {
+        q: "Что такое гибкий камень?",
+        a: "Гибкий камень — это современный отделочный материал, состоящий из тонкого слоя натурального песка или мраморной крошки, нанесённого на гибкую полимерную основу. Он выглядит и ощущается как настоящий камень, но при этом гнётся, мало весит и легко монтируется на любые поверхности — включая углы, колонны и криволинейные формы."
+      },
+      {
+        q: "Из чего производится гибкий камень компании LITOFLEX?",
+        a: "Наш гибкий камень производится из натурального кварцевого песка и мраморной крошки, которые наносятся на эластичную полимерную основу с помощью специальных связующих составов. Все компоненты экологически безопасны. Каждая плитка имеет уникальный природный рисунок, поскольку используется натуральное сырьё."
+      },
+      {
+        q: "Чем гибкий камень отличается от натурального?",
+        a: "Главные отличия: гибкий камень в 10–15 раз легче натурального, он гнётся и принимает форму любой поверхности, монтируется за несколько часов (натуральный — за несколько дней), стоит значительно дешевле. При этом внешне они практически неотличимы — гибкий камень сохраняет натуральную текстуру и тактильные ощущения настоящего камня."
+      },
+      {
+        q: "Какой срок службы гибкого камня?",
+        a: "Срок службы гибкого камня компании LITOFLEX составляет более 30 лет при правильном монтаже и минимальном уходе. Материал устойчив к ультрафиолету, не выгорает на солнце и сохраняет свой первоначальный вид на протяжении всего срока эксплуатации."
+      },
+      {
+        q: "Безопасен ли гибкий камень для здоровья?",
+        a: "Да, полностью безопасен. Гибкий камень компании LITOFLEX изготовлен из натуральных компонентов — песка и мраморной крошки. Он не выделяет вредных веществ, не имеет запаха и гипоаллергенен. Материал имеет все необходимые сертификаты качества и безопасности. Подходит для использования в жилых помещениях, включая детские комнаты."
+      },
+      {
+        q: "Чем гибкий камень отличается от гибкого кирпича?",
+        a: "Это два разных продукта компании LITOFLEX, отличающихся текстурой и внешним видом. Гибкий камень имитирует натуральный песчаник или сланец с природным рисунком. Гибкий кирпич имитирует кирпичную кладку с характерной прямоугольной формой. Оба материала имеют одинаковые технические характеристики и способ монтажа."
+      }
+    ]
+  },
+  {
+    category: "Характеристики",
+    questions: [
+      {
+        q: "Какую температуру выдерживает гибкий камень?",
+        a: "Гибкий камень компании LITOFLEX выдерживает экстремальные температуры: от -60°C до +150°C. Это делает его идеальным материалом для наружной отделки в белорусском климате, а также для облицовки каминов и печей."
+      },
+      {
+        q: "Можно ли использовать гибкий камень на улице?",
+        a: "Да, гибкий камень отлично подходит для наружной отделки. Он выдерживает более 100 циклов заморозки-разморозки, устойчив к дождю, снегу и ультрафиолету. Идеально подходит для отделки фасадов, цоколей, заборов, входных групп. Для дополнительной защиты рекомендуем обработку гидрофобизатором после монтажа."
+      },
+      {
+        q: "Какой вес у гибкого камня?",
+        a: "Гибкий камень компании LITOFLEX весит всего 2–4 кг на квадратный метр. Для сравнения: натуральный камень весит 30–50 кг/м², а клинкерный кирпич — 20–30 кг/м². Благодаря малому весу гибкий камень не создаёт нагрузки на фасад и фундамент, и его можно монтировать на любые поверхности без дополнительного усиления."
+      },
+      {
+        q: "Какие размеры модуля гибкого камня?",
+        a: "Стандартный размер модуля гибкого камня компании LITOFLEX — 950×550 мм. Материал легко режется обычными ножницами или строительным ножом, что позволяет подогнать его под любые размеры и формы при монтаже."
+      },
+      {
+        q: "Насколько гибкий камень устойчив к влаге?",
+        a: "Гибкий камень обладает низким водопоглощением. После обработки гидрофобизатором он становится практически водонепроницаемым. Это позволяет использовать его в ванных комнатах, на кухнях, в бассейнах и на фасадах без риска повреждения от влаги."
+      }
+    ]
+  },
+  {
+    category: "Покупка и цены",
+    questions: [
+      {
+        q: "Сколько стоит гибкий камень компании LITOFLEX?",
+        a: "Цена на гибкий камень компании LITOFLEX начинается от 60 BYN за квадратный метр. Гибкий кирпич — от 65 BYN/м². Точная стоимость зависит от выбранной текстуры и объёма заказа. Для крупных заказов предусмотрены скидки. Актуальные цены — в нашем каталоге на сайте."
+      },
+      {
+        q: "Как рассчитать, сколько материала мне нужно?",
+        a: "Для расчёта необходимо измерить площадь поверхности, которую вы хотите отделать (длина × высота), и вычесть площадь окон и дверей. Рекомендуем добавить 10–15% запаса на подрезку и подгонку. Вы можете связаться с нами — мы бесплатно поможем с расчётом по вашим размерам."
+      },
+      {
+        q: "Доставляете ли вы по всей Беларуси?",
+        a: "Да, мы доставляем гибкий камень и гибкий кирпич по всей Беларуси: Минск, Гомель, Брест, Гродно, Витебск, Могилёв и все населённые пункты. Стоимость и сроки доставки зависят от региона — уточняйте у наших менеджеров."
+      },
+      {
+        q: "Можно ли заказать образцы перед покупкой?",
+        a: "Да, мы предоставляем образцы нашей продукции, чтобы вы могли оценить текстуру, цвет и качество материала вживую. Свяжитесь с нами по телефону +375 (29) 661-38-42 для заказа образцов."
+      },
+      {
+        q: "Есть ли гарантия на продукцию?",
+        a: "Да, мы предоставляем гарантию на всю продукцию компании LITOFLEX. Наш гибкий камень сертифицирован и прошёл все необходимые испытания. Сертификаты качества доступны на нашем сайте в разделе «Сертификаты»."
+      }
+    ]
+  },
+  {
+    category: "Монтаж",
+    questions: [
+      {
+        q: "Можно ли смонтировать гибкий камень самостоятельно?",
+        a: "Да, монтаж гибкого камня достаточно прост и не требует специальных навыков. Материал клеится на подготовленную поверхность с помощью специального клея — аналогично поклейке обоев. Вам понадобятся: клей для гибкого камня, зубчатый шпатель, строительный нож, валик и грунтовка. Средняя скорость монтажа — 5–8 м² в день."
+      },
+      {
+        q: "Какой клей использовать для гибкого камня?",
+        a: "Рекомендуем использовать специализированный клей для гибкого камня или качественный клей для тяжёлых обоев и плитки на полимерной основе. Для наружных работ используйте морозостойкий клей. Расход клея — примерно 0,5–0,7 кг на квадратный метр. При покупке мы порекомендуем оптимальный клей для вашего случая."
+      },
+      {
+        q: "На какие поверхности можно клеить гибкий камень?",
+        a: "Гибкий камень можно монтировать практически на любую ровную поверхность: бетон, штукатурку, кирпич, гипсокартон, OSB, фанеру, ДСП, пеноблок, утеплитель (с армирующим слоем). Главное условие — поверхность должна быть чистой, сухой и ровной. При необходимости выполните предварительное выравнивание и грунтовку."
+      },
+      {
+        q: "Можно ли монтировать гибкий камень зимой?",
+        a: "Для наружного монтажа рекомендуется температура от +5°C до +35°C. В зимний период наружные работы лучше отложить до весны. Внутренние работы можно выполнять круглый год при нормальной комнатной температуре. Если на улице мороз, храните материал и клей в тёплом помещении."
+      }
+    ]
+  }
+];
+
+const ChevronIcon = ({ isOpen }: { isOpen: boolean }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{
+      transition: "transform 0.3s ease",
+      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+      flexShrink: 0
+    }}
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
+
+const FAQItem = ({ question, answer, isOpen, onClick }: {
+  question: string; answer: string; isOpen: boolean; onClick: () => void;
+}) => (
+  <div style={{ borderBottom: "1px solid rgba(255,255,255,0.1)", overflow: "hidden" }}>
+    <button
+      onClick={onClick}
+      style={{
+        width: "100%",
+        padding: "20px 0",
+        background: "none",
+        border: "none",
+        cursor: "pointer",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: "16px",
+        textAlign: "left",
+        color: isOpen ? "#E8651A" : "#ffffff",
+        transition: "color 0.3s ease"
+      }}
+    >
+      <span style={{ fontSize: "17px", fontWeight: 500, lineHeight: 1.4, fontFamily: "system-ui, -apple-system, sans-serif" }}>
+        {question}
+      </span>
+      <ChevronIcon isOpen={isOpen} />
+    </button>
+    <div
+      style={{
+        maxHeight: isOpen ? "500px" : "0",
+        opacity: isOpen ? 1 : 0,
+        transition: "max-height 0.4s ease, opacity 0.3s ease",
+        overflow: "hidden"
+      }}
+    >
+      <p style={{
+        margin: "0 0 20px 0",
+        padding: "0 40px 0 0",
+        fontSize: "15px",
+        lineHeight: 1.7,
+        color: "rgba(255,255,255,0.75)",
+        fontFamily: "system-ui, -apple-system, sans-serif"
+      }}>
+        {answer}
+      </p>
+    </div>
+  </div>
+);
+
+const CategoryTab = ({ label, isActive, onClick }: {
+  label: string; isActive: boolean; onClick: () => void;
+}) => (
+  <button
+    onClick={onClick}
+    style={{
+      padding: "10px 24px",
+      borderRadius: "100px",
+      border: isActive ? "2px solid #E8651A" : "2px solid rgba(255,255,255,0.15)",
+      background: isActive ? "rgba(232,101,26,0.15)" : "transparent",
+      color: isActive ? "#E8651A" : "rgba(255,255,255,0.7)",
+      fontSize: "14px",
+      fontWeight: 600,
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+      whiteSpace: "nowrap",
+      fontFamily: "system-ui, -apple-system, sans-serif"
+    }}
+  >
+    {label}
+  </button>
+);
+
+export default function FAQPage() {
+  const [activeCategory, setActiveCategory] = useState(0);
+  const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
+
+  const toggleItem = (key: string) => {
+    setOpenItems((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const allQuestions = faqData.flatMap((cat, ci) =>
+    cat.questions.map((q, qi) => ({ ...q, key: `${ci}-${qi}` }))
+  );
+
+  const displayQuestions =
+    activeCategory === 0
+      ? allQuestions
+      : faqData[activeCategory - 1].questions.map((q, qi) => ({
+          ...q,
+          key: `${activeCategory - 1}-${qi}`
+        }));
+
+  const categories = ["Все вопросы", ...faqData.map((c) => c.category)];
+
+  return (
+    <div style={{ minHeight: "100vh", background: "#1A2238", color: "#fff" }}>
+      {/* Header */}
+      <div style={{ padding: "80px 20px 40px", textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
+        <div style={{
+          display: "inline-block",
+          padding: "6px 16px",
+          borderRadius: "100px",
+          background: "rgba(232,101,26,0.15)",
+          border: "1px solid rgba(232,101,26,0.3)",
+          marginBottom: "24px"
+        }}>
+          <span style={{ color: "#E8651A", fontSize: "13px", fontWeight: 600, letterSpacing: "0.5px", fontFamily: "system-ui, sans-serif" }}>
+            ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+          </span>
+        </div>
+
+        <h1 style={{
+          fontSize: "clamp(28px, 5vw, 44px)",
+          fontWeight: 700,
+          margin: "0 0 16px",
+          lineHeight: 1.2,
+          fontFamily: "system-ui, -apple-system, sans-serif"
+        }}>
+          Всё, что нужно знать о{" "}
+          <span style={{ color: "#E8651A" }}>гибком камне</span>
+        </h1>
+
+        <p style={{
+          fontSize: "17px",
+          color: "rgba(255,255,255,0.6)",
+          margin: 0,
+          lineHeight: 1.6,
+          fontFamily: "system-ui, -apple-system, sans-serif"
+        }}>
+          Ответы на самые популярные вопросы о продукции компании LITOFLEX — от характеристик материала до монтажа и доставки
+        </p>
+      </div>
+
+      {/* Category tabs */}
+      <div style={{
+        maxWidth: "800px",
+        margin: "0 auto",
+        padding: "0 20px 32px",
+        display: "flex",
+        gap: "8px",
+        flexWrap: "wrap",
+        justifyContent: "center"
+      }}>
+        {categories.map((cat, i) => (
+          <CategoryTab
+            key={cat}
+            label={cat}
+            isActive={activeCategory === i}
+            onClick={() => setActiveCategory(i)}
+          />
+        ))}
+      </div>
+
+      {/* FAQ items */}
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 20px 40px" }}>
+        <div style={{
+          background: "rgba(255,255,255,0.03)",
+          borderRadius: "16px",
+          padding: "8px 32px",
+          border: "1px solid rgba(255,255,255,0.06)"
+        }}>
+          {displayQuestions.map((item) => (
+            <FAQItem
+              key={item.key}
+              question={item.q}
+              answer={item.a}
+              isOpen={!!openItems[item.key]}
+              onClick={() => toggleItem(item.key)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* CTA section */}
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 20px 80px", textAlign: "center" }}>
+        <div style={{
+          background: "linear-gradient(135deg, rgba(232,101,26,0.15) 0%, rgba(232,101,26,0.05) 100%)",
+          borderRadius: "20px",
+          padding: "48px 32px",
+          border: "1px solid rgba(232,101,26,0.2)"
+        }}>
+          <h2 style={{
+            fontSize: "24px",
+            fontWeight: 700,
+            margin: "0 0 12px",
+            fontFamily: "system-ui, -apple-system, sans-serif"
+          }}>
+            Не нашли ответ на свой вопрос?
+          </h2>
+          <p style={{
+            fontSize: "16px",
+            color: "rgba(255,255,255,0.6)",
+            margin: "0 0 28px",
+            fontFamily: "system-ui, -apple-system, sans-serif"
+          }}>
+            Свяжитесь с нами — мы с радостью проконсультируем вас бесплатно
+          </p>
+          <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+            <a
+              href="tel:+375296613842"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "14px 32px",
+                borderRadius: "100px",
+                background: "#E8651A",
+                color: "#fff",
+                textDecoration: "none",
+                fontWeight: 600,
+                fontSize: "15px",
+                fontFamily: "system-ui, -apple-system, sans-serif",
+              }}
+            >
+              📞 +375 (29) 661-38-42
+            </a>
+            <a
+              href="/#contacts"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "14px 32px",
+                borderRadius: "100px",
+                background: "transparent",
+                color: "#fff",
+                textDecoration: "none",
+                fontWeight: 600,
+                fontSize: "15px",
+                border: "2px solid rgba(255,255,255,0.2)",
+                fontFamily: "system-ui, -apple-system, sans-serif",
+              }}
+            >
+              ✉️ Написать нам
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats bar */}
+      <div style={{
+        maxWidth: "800px",
+        margin: "0 auto",
+        padding: "0 20px 60px",
+        display: "flex",
+        justifyContent: "center",
+        gap: "48px",
+        flexWrap: "wrap"
+      }}>
+        {[
+          { num: "30+", label: "Лет службы" },
+          { num: "100+", label: "Циклов морозостойкости" },
+          { num: "Г1", label: "Класс горючести" },
+          { num: "-60°C", label: "До +150°C" }
+        ].map(stat => (
+          <div key={stat.label} style={{ textAlign: "center" }}>
+            <div style={{ fontSize: "28px", fontWeight: 700, color: "#E8651A", fontFamily: "system-ui, sans-serif" }}>{stat.num}</div>
+            <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", marginTop: "4px", fontFamily: "system-ui, sans-serif" }}>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
