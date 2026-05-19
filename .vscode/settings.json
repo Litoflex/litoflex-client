@@ -1,0 +1,35 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"editor.formatOnSave": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.requireConfig": true,
+	"eslint.format.enable": true,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"tailwindCSS.includeLanguages": {
+		"typescript": "javascript",
+		"typescriptreact": "javascript",
+		"javascriptreact": "javascript",
+		"javascript": "javascript"
+	},
+	"tailwindCSS.experimental.classRegex": [
+		// Регулярное выражение для tv() из tw-variants
+		["tv\\(([^)]*)\\)", "(?:\"|')([^\"']*)(?:\"|')"]
+		// Если ты используешь tailwind-variants, это должно сработать для классов внутри tv({ base: '...' })
+		// Также можно использовать более общее:
+		// [ "([\"'`][^\"'`]*.*?[\\\"'`])", "[\\\"'`]([ ^\\\"'`]*).*?[\\\"'`]" ]
+		// Взято из документации tw-variants
+	],
+	"editor.quickSuggestions": {
+		"strings": true
+	}
+}
