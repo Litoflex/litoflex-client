@@ -5,8 +5,13 @@
       "name": "litoflex-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "port": 3000,
-      "cwd": "C:/Users/Intel/Desktop/litoflex-client-master"
+      "port": 3000
+    },
+    {
+      "name": "litoflex-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start"],
+      "port": 3000
     }
   ]
 }

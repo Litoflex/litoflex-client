@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePriceQuiz } from '@/components/PriceQuizContext';
 
 export default function HomePage() {
+  const { open: openPriceQuiz, pendingMessage, setPendingMessage } = usePriceQuiz();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [backToTopVisible, setBackToTopVisible] = useState(false);
@@ -79,6 +81,16 @@ export default function HomePage() {
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
+
+  // Price quiz → contact form prefill + scroll
+  useEffect(() => {
+    if (!pendingMessage) return;
+    setFormData(prev => ({ ...prev, comment: pendingMessage }));
+    setPendingMessage(null);
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }, [pendingMessage, setPendingMessage]);
 
   // Phone formatting
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -530,7 +542,16 @@ export default function HomePage() {
           <div className="section-container">
 
             {/* Stone products */}
-            <h3 className="catalogue-section-label" id="stone">гибкий камень</h3>
+            <div className="catalogue-section-heading">
+              <h3 className="catalogue-section-label" id="stone">гибкий камень</h3>
+              <button
+                type="button"
+                className="pcq-trigger"
+                onClick={openPriceQuiz}
+              >
+                Рассчитать стоимость
+              </button>
+            </div>
             <div className="products-grid">
               {products.filter(p => p.category === 'stone').map((product) => (
                 <article 
@@ -554,7 +575,16 @@ export default function HomePage() {
             </div>
 
             {/* Brick products */}
-            <h3 className="catalogue-section-label" id="brick">гибкий кирпич</h3>
+            <div className="catalogue-section-heading">
+              <h3 className="catalogue-section-label" id="brick">гибкий кирпич</h3>
+              <button
+                type="button"
+                className="pcq-trigger"
+                onClick={openPriceQuiz}
+              >
+                Рассчитать стоимость
+              </button>
+            </div>
             <div className="products-grid">
               {products.filter(p => p.category === 'brick').map((product) => (
                 <article 
@@ -927,12 +957,13 @@ export default function HomePage() {
             </ul>
           </div>
         </div>
-        <div style={{
+        <div className="footer-legal" style={{
           padding: '16px 24px',
           fontSize: '12px',
           lineHeight: 1.6,
           color: 'rgba(255,255,255,0.65)',
           borderTop: '1px solid rgba(255,255,255,0.12)',
+          textAlign: 'center',
         }}>
           <div>ООО «ЛитоФлекс»</div>
           <div>УНП: 193903896</div>
