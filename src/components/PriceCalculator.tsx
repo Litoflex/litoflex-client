@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { usePriceQuiz } from './PriceQuizContext';
+import BynSymbol from './BynSymbol';
 
 type Category = 'stone' | 'brick';
 
@@ -301,7 +302,7 @@ export default function PriceCalculator() {
                 <div className="pcq-result-row pcq-result-row--total">
                   <span className="pcq-result-label">Стоимость:</span>
                   <span className="pcq-result-value pcq-result-value--total">
-                    {formatWithSpaces(cost)} Br
+                    {formatWithSpaces(cost)} <BynSymbol />
                   </span>
                 </div>
                 <div className="pcq-result-pricehint">

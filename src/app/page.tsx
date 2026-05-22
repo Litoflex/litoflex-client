@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePriceQuiz } from '@/components/PriceQuizContext';
+import BynSymbol from '@/components/BynSymbol';
 
 export default function HomePage() {
   const { open: openPriceQuiz, pendingMessage, setPendingMessage } = usePriceQuiz();
@@ -244,36 +245,36 @@ export default function HomePage() {
 
   // Products data
   const products = [
-    // ==================== ГИБКИЙ КАМЕНЬ (28 BYN/модуль) ====================
-    { id: 1, category: 'stone', art: 'KGS-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png' },
-    { id: 2, category: 'stone', art: 'KGS-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c0850d2f2933f3fbac98a7bc0a2121c3.png' },
-    { id: 3, category: 'stone', art: 'KGS-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1167e04643ae79cb6904fab30cd433b6.png' },
-    { id: 4, category: 'stone', art: 'KGS-04', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/0f5337ce2c0d2245279631f862a0b6b3.png' },
-    { id: 5, category: 'stone', art: 'KGS-05', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7ed06c207598bc2fde8f969294ff379b.png' },
-    { id: 6, category: 'stone', art: 'KGS-06', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1cdd55208b89c1a2c77db57b470b731d.png' },
-    { id: 7, category: 'stone', art: 'KGS-07', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/97b661b66a385e185a5a62b8dd991c56.png' },
-    { id: 8, category: 'stone', art: 'KGS-08', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/25a5ab0ce02e37065df69db80a93ba21.png' },
-    { id: 9, category: 'stone', art: 'KMK-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png' },
-    { id: 10, category: 'stone', art: 'KMK-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c7a60d8bf52d9b9175d913a5e0027238.png' },
-    { id: 11, category: 'stone', art: 'KMK-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/101a4d888dbee04bddffd921ff154ec1.png' },
-    { id: 12, category: 'stone', art: 'KNT-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png' },
+    // ==================== ГИБКИЙ КАМЕНЬ (28 Б/модуль) ====================
+    { id: 1, category: 'stone', art: 'KGS-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png' },
+    { id: 2, category: 'stone', art: 'KGS-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c0850d2f2933f3fbac98a7bc0a2121c3.png' },
+    { id: 3, category: 'stone', art: 'KGS-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1167e04643ae79cb6904fab30cd433b6.png' },
+    { id: 4, category: 'stone', art: 'KGS-04', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/0f5337ce2c0d2245279631f862a0b6b3.png' },
+    { id: 5, category: 'stone', art: 'KGS-05', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7ed06c207598bc2fde8f969294ff379b.png' },
+    { id: 6, category: 'stone', art: 'KGS-06', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1cdd55208b89c1a2c77db57b470b731d.png' },
+    { id: 7, category: 'stone', art: 'KGS-07', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/97b661b66a385e185a5a62b8dd991c56.png' },
+    { id: 8, category: 'stone', art: 'KGS-08', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/25a5ab0ce02e37065df69db80a93ba21.png' },
+    { id: 9, category: 'stone', art: 'KMK-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png' },
+    { id: 10, category: 'stone', art: 'KMK-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c7a60d8bf52d9b9175d913a5e0027238.png' },
+    { id: 11, category: 'stone', art: 'KMK-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/101a4d888dbee04bddffd921ff154ec1.png' },
+    { id: 12, category: 'stone', art: 'KNT-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png' },
 
-    // ==================== ГИБКИЙ КИРПИЧ (30 BYN/модуль) ====================
-    { id: 13, category: 'brick', art: 'GK-0100', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
-    { id: 14, category: 'brick', art: 'GK-0200', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
-    { id: 15, category: 'brick', art: 'GK-0300', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
-    { id: 16, category: 'brick', art: 'GK-0400', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
-    { id: 17, category: 'brick', art: 'GK-0500', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
-    { id: 18, category: 'brick', art: 'GK-0600', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
-    { id: 19, category: 'brick', art: 'GK-0700', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
-    { id: 20, category: 'brick', art: 'GK-0800', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
-    { id: 21, category: 'brick', art: 'GK-0900', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/af77e4626bbefc24d66e3b97c1f58057.png' },
-    { id: 22, category: 'brick', art: 'GK-1101', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/529d4fd9b15f0cd1678a6c719e09b6e1.png' },
-    { id: 23, category: 'brick', art: 'GK-1200', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3a17052edb1f5cacbf8a662689cc55e7.png' },
-    { id: 24, category: 'brick', art: 'GK-1400', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/5b98eda6cc189c62685acf46a653c5c6.png' },
-    { id: 25, category: 'brick', art: 'GK-1402', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d4df50ec4eab85f7db7fc39faf6e8f4e.png' },
-    { id: 26, category: 'brick', art: 'GK-1503', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d211d12b167d1584157630e6643bfaf6.png' },
-    { id: 27, category: 'brick', art: 'GK-1800', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/be1d4590baa5e51034dad239b8507afe.png' },
+    // ==================== ГИБКИЙ КИРПИЧ (30 Б/модуль) ====================
+    { id: 13, category: 'brick', art: 'GK-0100', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
+    { id: 14, category: 'brick', art: 'GK-0200', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
+    { id: 15, category: 'brick', art: 'GK-0300', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
+    { id: 16, category: 'brick', art: 'GK-0400', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
+    { id: 17, category: 'brick', art: 'GK-0500', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
+    { id: 18, category: 'brick', art: 'GK-0600', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
+    { id: 19, category: 'brick', art: 'GK-0700', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
+    { id: 20, category: 'brick', art: 'GK-0800', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
+    { id: 21, category: 'brick', art: 'GK-0900', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/af77e4626bbefc24d66e3b97c1f58057.png' },
+    { id: 22, category: 'brick', art: 'GK-1101', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/529d4fd9b15f0cd1678a6c719e09b6e1.png' },
+    { id: 23, category: 'brick', art: 'GK-1200', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3a17052edb1f5cacbf8a662689cc55e7.png' },
+    { id: 24, category: 'brick', art: 'GK-1400', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/5b98eda6cc189c62685acf46a653c5c6.png' },
+    { id: 25, category: 'brick', art: 'GK-1402', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d4df50ec4eab85f7db7fc39faf6e8f4e.png' },
+    { id: 26, category: 'brick', art: 'GK-1503', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d211d12b167d1584157630e6643bfaf6.png' },
+    { id: 27, category: 'brick', art: 'GK-1800', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/be1d4590baa5e51034dad239b8507afe.png' },
   ];
 
   const filteredProducts = products.filter(p => p.category === activeCategory);
@@ -638,11 +639,11 @@ export default function HomePage() {
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}</span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
-                      <span className="product-size">{product.size}</span>
-                      <span className="product-size">Толщина: {product.thickness}</span>
-                      <span className="product-price">{product.price} {product.unit}</span>
+                      <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
+                      <span className="product-size"><span className="size-label">Толщина:</span> {product.thickness}</span>
                     </div>
                   </div>
                 </article>
@@ -676,11 +677,11 @@ export default function HomePage() {
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<br /><span className="product-price-sub">1 <BynSymbol />/шт</span></span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
-                      <span className="product-size">{product.size}</span>
-                      <span className="product-size">Толщина: {product.thickness}</span>
-                      <span className="product-price">{product.price} {product.unit}<br />1 BYN/шт</span>
+                      <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
+                      <span className="product-size"><span className="size-label">Толщина:</span> {product.thickness}</span>
                     </div>
                   </div>
                 </article>
@@ -716,12 +717,12 @@ export default function HomePage() {
                   </div>
                   <div className="spec-row">
                     <span className="spec-label">Цена:</span>
-                    <span className="spec-value price">{selectedProduct.price} {selectedProduct.unit}</span>
+                    <span className="spec-value price">{selectedProduct.price} <BynSymbol />{selectedProduct.unit}</span>
                   </div>
                   {selectedProduct.category === 'brick' && (
                     <div className="spec-row">
                       <span className="spec-label">Цена за 1 шт:</span>
-                      <span className="spec-value price">1 BYN</span>
+                      <span className="spec-value price">1 <BynSymbol /></span>
                     </div>
                   )}
                 </div>

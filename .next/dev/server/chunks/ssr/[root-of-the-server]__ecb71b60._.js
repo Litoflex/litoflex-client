@@ -407,14 +407,14 @@ function PriceCalculator() {
                             children: "← Назад"
                         }, void 0, false, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 185,
+                            lineNumber: 186,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "pcq-back-placeholder",
                             "aria-hidden": "true"
                         }, void 0, false, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 194,
+                            lineNumber: 195,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -422,7 +422,7 @@ function PriceCalculator() {
                             children: titles[step]
                         }, void 0, false, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 196,
+                            lineNumber: 197,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -433,13 +433,13 @@ function PriceCalculator() {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 197,
+                            lineNumber: 198,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                    lineNumber: 183,
+                    lineNumber: 184,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -454,12 +454,12 @@ function PriceCalculator() {
                             className: `pcq-progress-bar ${n <= step ? 'is-active' : ''}`
                         }, n, false, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 209,
+                            lineNumber: 210,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                    lineNumber: 207,
+                    lineNumber: 208,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -477,12 +477,12 @@ function PriceCalculator() {
                                         children: "Гибкий камень"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PriceCalculator.tsx",
-                                        lineNumber: 224,
+                                        lineNumber: 225,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 220,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -494,18 +494,18 @@ function PriceCalculator() {
                                         children: "Гибкий кирпич"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PriceCalculator.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 232,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 226,
+                                    lineNumber: 227,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 218,
+                            lineNumber: 219,
                             columnNumber: 13
                         }, this),
                         step === 2 && category && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -523,12 +523,12 @@ function PriceCalculator() {
                                                 loading: "lazy"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                lineNumber: 246,
+                                                lineNumber: 247,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 245,
+                                            lineNumber: 246,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -536,18 +536,18 @@ function PriceCalculator() {
                                             children: s.art
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 249,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, s.art, true, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 239,
+                                    lineNumber: 240,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 237,
+                            lineNumber: 238,
                             columnNumber: 13
                         }, this),
                         step === 3 && series && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -559,7 +559,7 @@ function PriceCalculator() {
                                     children: "Введите площадь в квадратных метрах"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 256,
+                                    lineNumber: 257,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -573,7 +573,7 @@ function PriceCalculator() {
                                     autoFocus: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 259,
+                                    lineNumber: 260,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -584,13 +584,13 @@ function PriceCalculator() {
                                     children: "Рассчитать"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 269,
+                                    lineNumber: 270,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 255,
+                            lineNumber: 256,
                             columnNumber: 13
                         }, this),
                         step === 4 && category && series && area !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -607,7 +607,7 @@ function PriceCalculator() {
                                                     children: "Материал:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 284,
+                                                    lineNumber: 285,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -619,13 +619,13 @@ function PriceCalculator() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 285,
+                                                    lineNumber: 286,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 283,
+                                            lineNumber: 284,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,7 +636,7 @@ function PriceCalculator() {
                                                     children: "Площадь:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 290,
+                                                    lineNumber: 291,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -647,13 +647,13 @@ function PriceCalculator() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 291,
+                                                    lineNumber: 292,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 289,
+                                            lineNumber: 290,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -664,7 +664,7 @@ function PriceCalculator() {
                                                     children: "Примерное количество:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 296,
+                                                    lineNumber: 297,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -675,13 +675,13 @@ function PriceCalculator() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 297,
+                                                    lineNumber: 298,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 295,
+                                            lineNumber: 296,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -692,24 +692,24 @@ function PriceCalculator() {
                                                     children: "Стоимость:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 302,
+                                                    lineNumber: 303,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "pcq-result-value pcq-result-value--total",
                                                     children: [
                                                         formatWithSpaces(cost),
-                                                        " Br"
+                                                        " Б"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                                    lineNumber: 303,
+                                                    lineNumber: 304,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 301,
+                                            lineNumber: 302,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -721,13 +721,13 @@ function PriceCalculator() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 308,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 282,
+                                    lineNumber: 283,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -737,30 +737,30 @@ function PriceCalculator() {
                                     children: "Связаться с менеджером"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                                    lineNumber: 311,
+                                    lineNumber: 312,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PriceCalculator.tsx",
-                            lineNumber: 281,
+                            lineNumber: 282,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/PriceCalculator.tsx",
-                    lineNumber: 216,
+                    lineNumber: 217,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/PriceCalculator.tsx",
-            lineNumber: 182,
+            lineNumber: 183,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/PriceCalculator.tsx",
-        lineNumber: 174,
+        lineNumber: 175,
         columnNumber: 5
     }, this);
 }

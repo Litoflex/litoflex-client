@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePriceQuiz } from '@/components/PriceQuizContext';
+import BynSymbol from '@/components/BynSymbol';
 
 export default function GibkijKirpichPage() {
   const { open: openPriceQuiz } = usePriceQuiz();
@@ -27,21 +28,21 @@ export default function GibkijKirpichPage() {
   }, []);
 
   const brickProducts = [
-    { id: 1, art: 'GK-0100', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
-    { id: 2, art: 'GK-0200', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
-    { id: 3, art: 'GK-0300', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
-    { id: 4, art: 'GK-0400', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
-    { id: 5, art: 'GK-0500', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
-    { id: 6, art: 'GK-0600', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
-    { id: 7, art: 'GK-0700', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
-    { id: 8, art: 'GK-0800', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
-    { id: 9, art: 'GK-0900', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/af77e4626bbefc24d66e3b97c1f58057.png' },
-    { id: 10, art: 'GK-1101', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/529d4fd9b15f0cd1678a6c719e09b6e1.png' },
-    { id: 11, art: 'GK-1200', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3a17052edb1f5cacbf8a662689cc55e7.png' },
-    { id: 12, art: 'GK-1400', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/5b98eda6cc189c62685acf46a653c5c6.png' },
-    { id: 13, art: 'GK-1402', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d4df50ec4eab85f7db7fc39faf6e8f4e.png' },
-    { id: 14, art: 'GK-1503', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d211d12b167d1584157630e6643bfaf6.png' },
-    { id: 15, art: 'GK-1800', size: '1100×550 мм', thickness: '3 мм', price: 30, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/be1d4590baa5e51034dad239b8507afe.png' },
+    { id: 1, art: 'GK-0100', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
+    { id: 2, art: 'GK-0200', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
+    { id: 3, art: 'GK-0300', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
+    { id: 4, art: 'GK-0400', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
+    { id: 5, art: 'GK-0500', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
+    { id: 6, art: 'GK-0600', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
+    { id: 7, art: 'GK-0700', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
+    { id: 8, art: 'GK-0800', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
+    { id: 9, art: 'GK-0900', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/af77e4626bbefc24d66e3b97c1f58057.png' },
+    { id: 10, art: 'GK-1101', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/529d4fd9b15f0cd1678a6c719e09b6e1.png' },
+    { id: 11, art: 'GK-1200', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3a17052edb1f5cacbf8a662689cc55e7.png' },
+    { id: 12, art: 'GK-1400', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/5b98eda6cc189c62685acf46a653c5c6.png' },
+    { id: 13, art: 'GK-1402', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d4df50ec4eab85f7db7fc39faf6e8f4e.png' },
+    { id: 14, art: 'GK-1503', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d211d12b167d1584157630e6643bfaf6.png' },
+    { id: 15, art: 'GK-1800', size: '1100×550 мм', thickness: '3-4 мм', price: 30, unit: '/модуль', image: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/be1d4590baa5e51034dad239b8507afe.png' },
   ];
 
   return (
@@ -108,7 +109,7 @@ export default function GibkijKirpichPage() {
               Гибкий кирпич в Минске
             </h1>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 2.5rem' }}>
-              ООО «ЛитоФлекс» — производитель гибкого кирпича в Минске. Гибкий кирпич это тонкие гибкие плитки, имитирующие кладку из настоящего кирпича: они выглядят как клинкерная или ручной формовки кладка, но при этом тонкие, лёгкие и монтируются в разы проще. Подходят и для фасада, и для отделки стен внутри помещения. Продаём напрямую от производства — цена от 30 BYN за модуль, доставка по всей Беларуси.
+              ООО «ЛитоФлекс» — производитель гибкого кирпича в Минске. Гибкий кирпич это тонкие гибкие плитки, имитирующие кладку из настоящего кирпича: они выглядят как клинкерная или ручной формовки кладка, но при этом тонкие, лёгкие и монтируются в разы проще. Подходят и для фасада, и для отделки стен внутри помещения. Продаём напрямую от производителя — цена от 30 <BynSymbol /> за модуль, доставка по всей Беларуси.
             </p>
 
             {/* Block: Что такое */}
@@ -116,7 +117,7 @@ export default function GibkijKirpichPage() {
               Что такое гибкий кирпич
             </h2>
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 1rem' }}>
-              Гибкий кирпич — это современная альтернатива тяжёлому облицовочному и клинкерному кирпичу. Каждый модуль повторяет форму, фактуру и цвет кирпичной кладки, но имеет толщину всего около 3 мм и легко гнётся. Размер модуля — 1100×550 мм, что ускоряет монтаж: одним листом закрывается сразу участок «кладки», а не отдельные кирпичики.
+              Гибкий кирпич — это современная альтернатива тяжёлому облицовочному и клинкерному кирпичу. Каждый модуль повторяет форму, фактуру и цвет кирпичной кладки, но имеет толщину всего около 3-4 мм и легко гнётся. Размер модуля — 1100×550 мм, что ускоряет монтаж: одним листом закрывается сразу участок «кладки», а не отдельные кирпичики.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 2.5rem' }}>
               Благодаря гибкости материал ложится не только на прямые стены, но и на углы, колонны и закруглённые поверхности — там, где настоящий кирпич потребовал бы сложной и дорогой кладки. Внешне готовая поверхность практически неотличима от классической кирпичной стены.
@@ -139,11 +140,11 @@ export default function GibkijKirpichPage() {
             </h2>
             <ul style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 2.5rem', paddingLeft: '1.25rem' }}>
               <li><strong>Вид настоящей кирпичной кладки</strong> без веса и стоимости клинкера.</li>
-              <li><strong>Тонкий и лёгкий.</strong> Около 3 мм, не нагружает стены и фундамент.</li>
+              <li><strong>Тонкий и лёгкий.</strong> Около 3-4 мм, не нагружает стены и фундамент.</li>
               <li><strong>Быстрый монтаж.</strong> Модуль 1100×550 мм закрывает большую площадь за раз.</li>
               <li><strong>Гибкость.</strong> Облицовка углов, колонн и закруглений без подрезки кирпичиков.</li>
               <li><strong>Для фасада и интерьера.</strong> Морозостойкий снаружи, негорючий внутри.</li>
-              <li><strong>Цена напрямую от производителя.</strong> От 30 BYN за модуль, без посредников.</li>
+              <li><strong>Цена напрямую от производителя.</strong> От 30 <BynSymbol /> за модуль, без посредников.</li>
               <li><strong>Доставка по всей Беларуси</strong> из Минска.</li>
             </ul>
 
@@ -152,7 +153,7 @@ export default function GibkijKirpichPage() {
               Цена и как заказать
             </h2>
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 1rem' }}>
-              Гибкий кирпич ЛитоФлекс — от 30 BYN за модуль размером 1100×550 мм. Итоговая стоимость зависит от коллекции и площади. Рассчитать количество материала на ваш объект и узнать точную сумму можно через калькулятор на сайте или по телефону — поможем с расчётом бесплатно.
+              Гибкий кирпич ЛитоФлекс — от 30 <BynSymbol /> за модуль размером 1100×550 мм. Итоговая стоимость зависит от коллекции и площади. Рассчитать количество материала на ваш объект и узнать точную сумму можно через калькулятор на сайте или по телефону — поможем с расчётом бесплатно.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 2.5rem' }}>
               Телефоны:{' '}
@@ -179,11 +180,11 @@ export default function GibkijKirpichPage() {
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<br /><span className="product-price-sub">1 <BynSymbol />/шт</span></span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
-                      <span className="product-size">{product.size}</span>
-                      <span className="product-size">Толщина: {product.thickness}</span>
-                      <span className="product-price">{product.price} {product.unit}<br />1 BYN/шт</span>
+                      <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
+                      <span className="product-size"><span className="size-label">Толщина:</span> {product.thickness}</span>
                     </div>
                   </div>
                 </article>

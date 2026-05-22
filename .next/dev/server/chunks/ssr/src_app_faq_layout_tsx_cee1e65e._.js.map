@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Intel/Desktop/litoflex-client-master/src/app/faq/layout.tsx"],"sourcesContent":["import type { Metadata } from 'next'\n\nexport const metadata: Metadata = {\n  title: 'Вопросы и ответы про гибкий камень и гибкий кирпич — LITOFLEX',\n  description: 'Ответы на популярные вопросы про гибкий камень и гибкий кирпич LITOFLEX: монтаж, цена, доставка, характеристики, срок службы.',\n  alternates: {\n    canonical: 'https://www.litoflex.by/faq',\n  },\n  openGraph: {\n    title: 'Вопросы и ответы — LITOFLEX',\n    description: 'Ответы на популярные вопросы про гибкий камень и гибкий кирпич',\n    url: 'https://www.litoflex.by/faq',\n    siteName: 'LITOFLEX',\n    locale: 'ru_BY',\n    type: 'website',\n  },\n}\n\nexport default function FaqLayout({ children }: { children: React.ReactNode }) {\n  return children\n}\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;IACb,YAAY;QACV,WAAW;IACb;IACA,WAAW;QACT,OAAO;QACP,aAAa;QACb,KAAK;QACL,UAAU;QACV,QAAQ;QACR,MAAM;IACR;AACF;AAEe,SAAS,UAAU,EAAE,QAAQ,EAAiC;IAC3E,OAAO;AACT","debugId":null}}]
-}

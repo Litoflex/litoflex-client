@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePriceQuiz } from '@/components/PriceQuizContext';
+import BynSymbol from '@/components/BynSymbol';
 
 export default function GibkijKamenPage() {
   const { open: openPriceQuiz } = usePriceQuiz();
@@ -27,18 +28,18 @@ export default function GibkijKamenPage() {
   }, []);
 
   const stoneProducts = [
-    { id: 1, art: 'KGS-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png' },
-    { id: 2, art: 'KGS-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c0850d2f2933f3fbac98a7bc0a2121c3.png' },
-    { id: 3, art: 'KGS-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1167e04643ae79cb6904fab30cd433b6.png' },
-    { id: 4, art: 'KGS-04', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/0f5337ce2c0d2245279631f862a0b6b3.png' },
-    { id: 5, art: 'KGS-05', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7ed06c207598bc2fde8f969294ff379b.png' },
-    { id: 6, art: 'KGS-06', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1cdd55208b89c1a2c77db57b470b731d.png' },
-    { id: 7, art: 'KGS-07', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/97b661b66a385e185a5a62b8dd991c56.png' },
-    { id: 8, art: 'KGS-08', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/25a5ab0ce02e37065df69db80a93ba21.png' },
-    { id: 9, art: 'KMK-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png' },
-    { id: 10, art: 'KMK-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c7a60d8bf52d9b9175d913a5e0027238.png' },
-    { id: 11, art: 'KMK-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/101a4d888dbee04bddffd921ff154ec1.png' },
-    { id: 12, art: 'KNT-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: 'BYN/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png' },
+    { id: 1, art: 'KGS-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png' },
+    { id: 2, art: 'KGS-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c0850d2f2933f3fbac98a7bc0a2121c3.png' },
+    { id: 3, art: 'KGS-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1167e04643ae79cb6904fab30cd433b6.png' },
+    { id: 4, art: 'KGS-04', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/0f5337ce2c0d2245279631f862a0b6b3.png' },
+    { id: 5, art: 'KGS-05', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7ed06c207598bc2fde8f969294ff379b.png' },
+    { id: 6, art: 'KGS-06', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/1cdd55208b89c1a2c77db57b470b731d.png' },
+    { id: 7, art: 'KGS-07', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/97b661b66a385e185a5a62b8dd991c56.png' },
+    { id: 8, art: 'KGS-08', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/25a5ab0ce02e37065df69db80a93ba21.png' },
+    { id: 9, art: 'KMK-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png' },
+    { id: 10, art: 'KMK-02', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/c7a60d8bf52d9b9175d913a5e0027238.png' },
+    { id: 11, art: 'KMK-03', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/101a4d888dbee04bddffd921ff154ec1.png' },
+    { id: 12, art: 'KNT-01', size: '950×550 мм', thickness: '1.5 - 2 мм', price: 28, unit: '/модуль', image: 'https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png' },
   ];
 
   return (
@@ -105,7 +106,7 @@ export default function GibkijKamenPage() {
               Гибкий камень в Минске
             </h1>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 2.5rem' }}>
-              ООО «ЛитоФлекс» — производитель гибкого камня в Минске. Гибкий камень это тонкий слой натурального песчаника, перенесённый на гибкую основу: он повторяет фактуру и рисунок настоящего камня, но весит в разы меньше и легко монтируется как на фасад здания, так и на стены внутри помещения. Продаём напрямую от производства, без посредников — цена от 28 BYN за модуль, доставка по всей Беларуси.
+              ООО «ЛитоФлекс» — производитель гибкого камня в Минске. Гибкий камень это тонкий слой натурального песчаника, перенесённый на гибкую основу: он повторяет фактуру и рисунок настоящего камня, но весит в разы меньше и легко монтируется как на фасад здания, так и на стены внутри помещения. Продаём напрямую от производителя, без посредников — цена от 28 <BynSymbol /> за модуль, доставка по всей Беларуси.
             </p>
 
             {/* Block: Что такое */}
@@ -139,7 +140,7 @@ export default function GibkijKamenPage() {
               <li><strong>Малый вес.</strong> В разы легче плитки и натурального камня, не нагружает конструкцию.</li>
               <li><strong>Гибкость.</strong> Облицовка колонн, арок, углов и неровных поверхностей.</li>
               <li><strong>Для улицы и для дома.</strong> Морозостойкий и негорючий — один материал для фасада и интерьера.</li>
-              <li><strong>Цена напрямую от производителя.</strong> От 28 BYN за модуль 950×550 мм, без наценки посредников.</li>
+              <li><strong>Цена напрямую от производителя.</strong> От 28 <BynSymbol /> за модуль 950×550 мм, без наценки посредников.</li>
               <li><strong>Доставка по всей Беларуси.</strong> Из Минска в любой город.</li>
             </ul>
 
@@ -148,7 +149,7 @@ export default function GibkijKamenPage() {
               Цена и как заказать
             </h2>
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 1rem' }}>
-              Гибкий камень ЛитоФлекс — от 28 BYN за модуль размером 950×550 мм. Точная стоимость зависит от коллекции и площади облицовки. Чтобы узнать, сколько материала нужно именно на ваш объект, и рассчитать итоговую сумму — воспользуйтесь калькулятором на сайте или свяжитесь с нами по телефону, мы поможем с расчётом бесплатно.
+              Гибкий камень ЛитоФлекс — от 28 <BynSymbol /> за модуль размером 950×550 мм. Точная стоимость зависит от коллекции и площади облицовки. Чтобы узнать, сколько материала нужно именно на ваш объект, и рассчитать итоговую сумму — воспользуйтесь калькулятором на сайте или свяжитесь с нами по телефону, мы поможем с расчётом бесплатно.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', maxWidth: '900px', margin: '0 0 2.5rem' }}>
               Телефоны:{' '}
@@ -175,11 +176,11 @@ export default function GibkijKamenPage() {
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}</span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
-                      <span className="product-size">{product.size}</span>
-                      <span className="product-size">Толщина: {product.thickness}</span>
-                      <span className="product-price">{product.price} {product.unit}</span>
+                      <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
+                      <span className="product-size"><span className="size-label">Толщина:</span> {product.thickness}</span>
                     </div>
                   </div>
                 </article>
