@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/telegram/route": "/api/telegram",
+  "/category/[id]/page": "/category/[id]",
+  "/certificates/page": "/certificates",
+  "/faq/page": "/faq",
+  "/favicon.ico/route": "/favicon.ico",
+  "/gibkij-kamen/page": "/gibkij-kamen",
+  "/gibkij-kirpich/page": "/gibkij-kirpich",
+  "/page": "/",
+  "/privacy-policy/page": "/privacy-policy",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
+}

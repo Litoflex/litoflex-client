@@ -1,0 +1,17 @@
+/* TEAM */
+Company: LITOFLEX (ООО «ЛитоФлекс»)
+Site: https://www.litoflex.by
+Location: Минск, Беларусь
+Contact: info@litoflex.by
+Phone: +375 (29) 661-38-42
+
+/* SITE */
+Last update: 2026/01/26
+Language: Russian
+Doctype: HTML5
+Framework: Next.js 14
+Styling: CSS3
+
+/* БЛАГОДАРНОСТИ */
+Спасибо, что посетили наш сайт!
+Мы производим качественные отделочные материалы с 2015 года.

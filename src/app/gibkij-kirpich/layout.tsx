@@ -1,0 +1,107 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Гибкий кирпич в Минске — купить от производителя | ЛитоФлекс',
+  description: 'Гибкий кирпич для фасада и интерьера от производителя в Минске. Цена от 30 BYN за модуль, доставка по всей Беларуси. Лёгкая и гибкая альтернатива клинкерному кирпичу.',
+  keywords: [
+    'гибкий кирпич',
+    'гибкий кирпич Минск',
+    'гибкий кирпич купить',
+    'гибкий кирпич от производителя',
+    'альтернатива клинкеру',
+    'гибкий кирпич Беларусь',
+    'отделка фасада гибким кирпичом',
+    'LITOFLEX',
+  ],
+  openGraph: {
+    title: 'Гибкий кирпич в Минске — купить от производителя | ЛитоФлекс',
+    description: 'Гибкий кирпич для фасада и интерьера от производителя в Минске. Цена от 30 BYN за модуль, доставка по всей Беларуси.',
+    url: 'https://www.litoflex.by/gibkij-kirpich',
+    siteName: 'LITOFLEX',
+    locale: 'ru_BY',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.litoflex.by/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'LITOFLEX — Гибкий кирпич',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://www.litoflex.by/gibkij-kirpich',
+  },
+  robots: { index: true, follow: true },
+};
+
+export default function GibkijKirpichLayout({ children }: { children: React.ReactNode }) {
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://www.litoflex.by/' },
+      { '@type': 'ListItem', position: 2, name: 'Гибкий кирпич', item: 'https://www.litoflex.by/gibkij-kirpich' },
+    ],
+  };
+
+  const brickProducts = [
+    { sku: 'GK-0100', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png' },
+    { sku: 'GK-0200', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/626af35c4a6381931d76b25027af1f1d.png' },
+    { sku: 'GK-0300', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e1455447f13802de034ce68b8612e9c2.png' },
+    { sku: 'GK-0400', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/428baf7f0e063c9712966f2f13d77040.png' },
+    { sku: 'GK-0500', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/1a89e213471caa73b28d1591a425cac8.png' },
+    { sku: 'GK-0600', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/604b02a68ea7eeeb300f9a00db92c15f.png' },
+    { sku: 'GK-0700', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/dbab54b7377c5721e5cdaa956057b75c.png' },
+    { sku: 'GK-0800', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/37b5a89d21df3bc3ee580031cd3ebcd6.png' },
+    { sku: 'GK-0900', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/af77e4626bbefc24d66e3b97c1f58057.png' },
+    { sku: 'GK-1101', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/529d4fd9b15f0cd1678a6c719e09b6e1.png' },
+    { sku: 'GK-1200', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/3a17052edb1f5cacbf8a662689cc55e7.png' },
+    { sku: 'GK-1400', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/5b98eda6cc189c62685acf46a653c5c6.png' },
+    { sku: 'GK-1402', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d4df50ec4eab85f7db7fc39faf6e8f4e.png' },
+    { sku: 'GK-1503', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/d211d12b167d1584157630e6643bfaf6.png' },
+    { sku: 'GK-1800', img: 'https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/be1d4590baa5e51034dad239b8507afe.png' },
+  ];
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Каталог гибкого кирпича LITOFLEX',
+    description: 'Гибкий кирпич для фасада и интерьера — серия GK',
+    numberOfItems: brickProducts.length,
+    itemListElement: brickProducts.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name: `Гибкий кирпич ${p.sku}`,
+        sku: p.sku,
+        image: p.img,
+        brand: { '@type': 'Brand', name: 'LITOFLEX' },
+        category: 'Гибкий кирпич',
+        offers: {
+          '@type': 'Offer',
+          url: 'https://www.litoflex.by/gibkij-kirpich',
+          priceCurrency: 'BYN',
+          price: '30',
+          availability: 'https://schema.org/InStock',
+          seller: { '@type': 'Organization', name: 'LITOFLEX' },
+        },
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      {children}
+    </>
+  );
+}

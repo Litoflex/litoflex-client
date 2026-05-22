@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/gibkij-kirpich/layout,_N_T_/gibkij-kirpich/page,_N_T_/gibkij-kirpich"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/gibkij-kirpich/__PAGE__",
+    "/gibkij-kirpich",
+    "/_index"
+  ]
+}
