@@ -76,6 +76,7 @@ export default function GibkijKamenLayout({ children }: { children: React.ReactN
       item: {
         '@type': 'Product',
         name: `Гибкий камень ${p.sku}`,
+        description: `Гибкий камень ${p.sku} от LITOFLEX — натуральная мраморная крошка на гибкой основе. Размер модуля 950×550 мм, толщина 1,5–2 мм. Для фасада и интерьера.`,
         sku: p.sku,
         image: p.img,
         brand: { '@type': 'Brand', name: 'LITOFLEX' },

@@ -290,11 +290,14 @@ export default function HomePage() {
             "@type": "Product",
             "name": "Гибкий камень серия KGS",
             "description": "Гибкий камень с мраморными текстурами для облицовки фасадов и интерьеров. 8 цветов, размер модуля 950×550 мм, толщина 1,5-2 мм.",
+            "image": "https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c16ed91f06f29a7fdc05aaaebe0c84f.png",
+            "sku": "KGS",
             "brand": { "@type": "Brand", "name": "LITOFLEX" },
             "manufacturer": { "@type": "Organization", "name": "ООО ЛитоФлекс" },
             "category": "Облицовочные материалы",
             "offers": {
               "@type": "Offer",
+              "url": "https://www.litoflex.by/gibkij-kamen",
               "price": "28",
               "priceCurrency": "BYN",
               "availability": "https://schema.org/InStock",
@@ -313,11 +316,14 @@ export default function HomePage() {
             "@type": "Product",
             "name": "Гибкий камень серия KMK",
             "description": "Гибкий камень с выразительными мраморными узорами. 3 цвета, размер модуля 950×550 мм, толщина 1,5-2 мм.",
+            "image": "https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/7c874cbae68a83f16817107eb129de61.png",
+            "sku": "KMK",
             "brand": { "@type": "Brand", "name": "LITOFLEX" },
             "manufacturer": { "@type": "Organization", "name": "ООО ЛитоФлекс" },
             "category": "Облицовочные материалы",
             "offers": {
               "@type": "Offer",
+              "url": "https://www.litoflex.by/gibkij-kamen",
               "price": "28",
               "priceCurrency": "BYN",
               "availability": "https://schema.org/InStock",
@@ -336,11 +342,14 @@ export default function HomePage() {
             "@type": "Product",
             "name": "Гибкий камень серия KNT",
             "description": "Гибкий камень с натуральными природными оттенками. Размер модуля 950×550 мм, толщина 1,5-2 мм.",
+            "image": "https://f2.lpcdn.site/b545763d258228703401ad24bd59b64d/87e3f19afd056103a03d9e6d5e653e94.png",
+            "sku": "KNT",
             "brand": { "@type": "Brand", "name": "LITOFLEX" },
             "manufacturer": { "@type": "Organization", "name": "ООО ЛитоФлекс" },
             "category": "Облицовочные материалы",
             "offers": {
               "@type": "Offer",
+              "url": "https://www.litoflex.by/gibkij-kamen",
               "price": "28",
               "priceCurrency": "BYN",
               "availability": "https://schema.org/InStock",
@@ -359,11 +368,14 @@ export default function HomePage() {
             "@type": "Product",
             "name": "Гибкий кирпич серия GK",
             "description": "Гибкий кирпич — альтернатива клинкеру. 15 цветов, размер модуля 1100×550×3 мм. В 15 раз легче кирпича.",
+            "image": "https://f2.lpcdn.site/e0c9c117a953c1fdbc0042e8762379c1/e2280423b208482f3fccc5a87dd56a68.png",
+            "sku": "GK",
             "brand": { "@type": "Brand", "name": "LITOFLEX" },
             "manufacturer": { "@type": "Organization", "name": "ООО ЛитоФлекс" },
             "category": "Гибкий кирпич",
             "offers": {
               "@type": "Offer",
+              "url": "https://www.litoflex.by/gibkij-kirpich",
               "price": "30",
               "priceCurrency": "BYN",
               "availability": "https://schema.org/InStock",
@@ -408,17 +420,11 @@ export default function HomePage() {
                       "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
                       "merchantReturnDays": 14,
                       "returnMethod": "https://schema.org/ReturnByMail",
-                      "returnFees": "https://schema.org/FreeReturn"
+                      "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility"
                     },
                     "shippingDetails": {
                       "@type": "OfferShippingDetails",
-                      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "BY" },
-                      "deliveryTime": {
-                        "@type": "ShippingDeliveryTime",
-                        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" },
-                        "transitTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "DAY" }
-                      },
-                      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "BYN" }
+                      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "BY" }
                     }
                   }
                 }
@@ -447,17 +453,11 @@ export default function HomePage() {
                       "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
                       "merchantReturnDays": 14,
                       "returnMethod": "https://schema.org/ReturnByMail",
-                      "returnFees": "https://schema.org/FreeReturn"
+                      "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility"
                     },
                     "shippingDetails": {
                       "@type": "OfferShippingDetails",
-                      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "BY" },
-                      "deliveryTime": {
-                        "@type": "ShippingDeliveryTime",
-                        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" },
-                        "transitTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "DAY" }
-                      },
-                      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "BYN" }
+                      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "BY" }
                     }
                   }
                 }

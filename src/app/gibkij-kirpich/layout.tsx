@@ -75,6 +75,7 @@ export default function GibkijKirpichLayout({ children }: { children: React.Reac
       item: {
         '@type': 'Product',
         name: `Гибкий кирпич ${p.sku}`,
+        description: `Гибкий кирпич ${p.sku} от LITOFLEX — лёгкая и гибкая альтернатива клинкерному кирпичу. Размер модуля 1100×550 мм, толщина 3 мм. Для фасада и интерьера.`,
         sku: p.sku,
         image: p.img,
         brand: { '@type': 'Brand', name: 'LITOFLEX' },
