@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePriceQuiz } from './PriceQuizContext';
 import BynSymbol from './BynSymbol';
+import { PROMO } from '@/lib/promo';
 
 type Category = 'stone' | 'brick';
 
@@ -275,6 +276,11 @@ export default function PriceCalculator() {
               >
                 Рассчитать
               </button>
+              {PROMO.enabled && (
+                <p className="pcq-promo-hint">
+                  <span aria-hidden="true">★ </span>{PROMO.text}
+                </p>
+              )}
             </div>
           )}
 
@@ -308,6 +314,17 @@ export default function PriceCalculator() {
                 <div className="pcq-result-pricehint">
                   Цена указана за {formatWithSpaces(area)} м²
                 </div>
+                {PROMO.enabled && area >= PROMO.minArea && (
+                  <div className="pcq-promo-hint pcq-promo-hint--result">
+                    <span aria-hidden="true">★ </span>
+                    Ваш объём — от {PROMO.minArea} м². Менеджер применит скидку {PROMO.discount}% при оформлении заказа.
+                  </div>
+                )}
+                {PROMO.enabled && area < PROMO.minArea && (
+                  <div className="pcq-promo-hint pcq-promo-hint--result">
+                    <span aria-hidden="true">★ </span>{PROMO.text}
+                  </div>
+                )}
               </div>
               <button
                 type="button"

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePriceQuiz } from '@/components/PriceQuizContext';
 import BynSymbol from '@/components/BynSymbol';
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 export default function HomePage() {
   const { open: openPriceQuiz, pendingMessage, setPendingMessage } = usePriceQuiz();
@@ -596,7 +597,7 @@ export default function HomePage() {
           <div className="hero-content">
             <div className="hero-text">
               <h1>Гибкий камень и гибкий кирпич в Минске<br />— производство ЛитоФлекс</h1>
-              <p className="hero-summary" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--gray-600)', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
+              <p className="hero-summary" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--gray-600)', margin: '0 0 0.5rem', lineHeight: 1.5 }}>
                 ООО «ЛитоФлекс» — производитель гибкого камня и гибкого кирпича в Минске. Доставка по всей Беларуси.
               </p>
               <div className="hero-phone-block">
@@ -614,6 +615,9 @@ export default function HomePage() {
         {/* Catalogue Section */}
         <section className="catalogue" id="catalogue">
           <div className="section-container">
+
+            {/* Promo bar (между hero и каталогом) */}
+            <AnnouncementBar variant="inline" />
 
             {/* Stone products */}
             <div className="catalogue-section-heading">
