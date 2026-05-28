@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePriceQuiz } from '@/components/PriceQuizContext';
 import BynSymbol from '@/components/BynSymbol';
@@ -14,6 +14,7 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('stone');
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   const [formData, setFormData] = useState({ name: '', phone: '', comment: '', privacy: false });
+  const [highlightForm, setHighlightForm] = useState(false);
   const [phoneFlag, setPhoneFlag] = useState('\u{1F1E7}\u{1F1FE}');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -84,15 +85,69 @@ export default function HomePage() {
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
-  // Price quiz → contact form prefill + scroll
+  // Точный, без рывков скролл к форме + подсветка обязательных полей.
+  // Используется и при заказе на главной, и при возврате с /gibkij-kamen/kirpich.
+  const scrollToContactFormAndHighlight = useCallback(() => {
+    setHighlightForm(true);
+    const highlightOff = setTimeout(() => setHighlightForm(false), 4500);
+
+    // Отключаем browser scroll-restoration, чтобы он не вернул назад
+    const prevSR = (typeof history !== 'undefined' && 'scrollRestoration' in history)
+      ? history.scrollRestoration : null;
+    if (prevSR !== null) history.scrollRestoration = 'manual';
+
+    const OFFSET_ABOVE_FORM = 220;
+    const computeTop = (form: HTMLElement) =>
+      form.getBoundingClientRect().top + window.scrollY - OFFSET_ABOVE_FORM;
+
+    let tries = 0;
+    let pinUntil = 0;
+    let pinFrame = 0;
+
+    const goToForm = () => {
+      const form = document.getElementById('contact-form-fields');
+      if (!form) {
+        if (tries++ < 30) setTimeout(goToForm, 80);
+        return;
+      }
+      // Pin позиции ~1.5с: перебиваем поздние layout shifts и scroll-restoration
+      pinUntil = performance.now() + 1500;
+      const pin = () => {
+        const target = computeTop(form);
+        if (Math.abs(window.scrollY - target) > 1) {
+          window.scrollTo({ top: target, behavior: 'auto' });
+        }
+        if (performance.now() < pinUntil) {
+          pinFrame = requestAnimationFrame(pin);
+        }
+      };
+      pinFrame = requestAnimationFrame(pin);
+    };
+    setTimeout(goToForm, 30);
+
+    // Возвращаем cleanup на случай если эффект остановят
+    return () => {
+      clearTimeout(highlightOff);
+      if (pinFrame) cancelAnimationFrame(pinFrame);
+      pinUntil = 0;
+      if (prevSR !== null) history.scrollRestoration = prevSR;
+    };
+  }, []);
+
+  // Price quiz / переход с других страниц → префилл формы + скролл/подсветка
   useEffect(() => {
     if (!pendingMessage) return;
     setFormData(prev => ({ ...prev, comment: pendingMessage }));
     setPendingMessage(null);
-    setTimeout(() => {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, [pendingMessage, setPendingMessage]);
+    return scrollToContactFormAndHighlight();
+  }, [pendingMessage, setPendingMessage, scrollToContactFormAndHighlight]);
+
+  // Снять highlight, когда пользователь начал заполнять обязательные поля
+  useEffect(() => {
+    if (highlightForm && (formData.name.length > 0 || formData.phone.replace(/\D/g, '').length > 4)) {
+      setHighlightForm(false);
+    }
+  }, [highlightForm, formData.name, formData.phone]);
 
   // Phone formatting
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -226,16 +281,16 @@ export default function HomePage() {
     }
   };
 
-  // Order — scroll to contact form with product info
+  // Order — scroll to contact form with product info + highlight required fields
   const orderProduct = (product: typeof products[0]) => {
     setFormData(prev => ({
       ...prev,
-      comment: `Интересует товар: ${product.art}, ${product.size}, ${product.price} ${product.unit}`,
+      comment: `Интересует товар: ${product.art}, ${product.size}, ${product.price} Б${product.unit}`,
     }));
     setSelectedProduct(null);
-    setTimeout(() => {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    // Та же логика, что и при заказе с /gibkij-kamen/kirpich:
+    // pin позиции 1.5с, отключение scroll-restoration, ретрай поиска формы.
+    scrollToContactFormAndHighlight();
   };
 
   // Categories
@@ -617,7 +672,7 @@ export default function HomePage() {
           <div className="section-container">
 
             {/* Promo bar (между hero и каталогом) */}
-            <AnnouncementBar variant="inline" />
+            <AnnouncementBar />
 
             {/* Stone products */}
             <div className="catalogue-section-heading">
@@ -643,7 +698,7 @@ export default function HomePage() {
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
-                    <span className="product-price">{product.price} <BynSymbol />{product.unit}</span>
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<span className="product-price-area"><span className="product-price-area-dash">—</span>0,52 м²</span></span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
                       <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
@@ -681,7 +736,7 @@ export default function HomePage() {
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
-                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<br /><span className="product-price-sub">1 <BynSymbol />/шт</span></span>
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<span className="product-price-area"><span className="product-price-area-dash">—</span>0,6 м²</span></span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
                       <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
@@ -718,6 +773,10 @@ export default function HomePage() {
                   <div className="spec-row">
                     <span className="spec-label">Толщина:</span>
                     <span className="spec-value">{selectedProduct.thickness}</span>
+                  </div>
+                  <div className="spec-row">
+                    <span className="spec-label">Площадь модуля:</span>
+                    <span className="spec-value">{selectedProduct.category === 'brick' ? '0,6 м²' : '0,52 м²'}</span>
                   </div>
                   <div className="spec-row">
                     <span className="spec-label">Цена:</span>
@@ -931,27 +990,35 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="form-container">
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="name">Ваше имя</label>
+                <form onSubmit={handleSubmit} id="contact-form-fields">
+                  <div className={`form-group ${highlightForm ? 'is-highlight' : ''}`}>
+                    <label htmlFor="name">
+                      Ваше имя
+                      <span className="form-required-mark" aria-hidden="true">*</span>
+                    </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       placeholder="Введите ваше имя"
                       required
+                      aria-required="true"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">Телефон</label>
+                  <div className={`form-group ${highlightForm ? 'is-highlight' : ''}`}>
+                    <label htmlFor="phone">
+                      Телефон
+                      <span className="form-required-mark" aria-hidden="true">*</span>
+                    </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       placeholder="+375 (__) ___-__-__"
                       required
+                      aria-required="true"
                       value={formData.phone}
                       onChange={handlePhoneChange}
                       onFocus={handlePhoneFocus}
@@ -974,11 +1041,18 @@ export default function HomePage() {
                       id="privacy"
                       name="privacy"
                       required
+                      aria-required="true"
                       checked={formData.privacy}
                       onChange={(e) => setFormData({ ...formData, privacy: e.target.checked })}
                     />
-                    <label htmlFor="privacy">Я согласен(-а) с <Link href="/privacy-policy">политикой конфиденциальности</Link></label>
+                    <label htmlFor="privacy">
+                      Я согласен(-а) с <Link href="/privacy-policy">политикой конфиденциальности</Link>
+                      <span className="form-required-mark" aria-hidden="true">*</span>
+                    </label>
                   </div>
+                  <p className="form-required-note">
+                    <span className="form-required-mark" aria-hidden="true">*</span>обязательное поле
+                  </p>
                   <button type="submit" className="btn btn-large btn-full" disabled={isSubmitting}>
                     {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                   </button>

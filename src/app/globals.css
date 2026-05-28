@@ -1914,6 +1914,36 @@ section {
     box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
 }
 
+/* Подсветка обязательных полей при переходе по «Заказать»:
+   статичная оранжевая рамка + ореол на всё время действия + лёгкая пульсация. */
+@keyframes form-field-glow {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.25); }
+    50%      { box-shadow: 0 0 0 7px rgba(255, 107, 53, 0.18); }
+}
+.form-group.is-highlight input,
+.form-group.is-highlight textarea {
+    border-color: var(--orange) !important;
+    background: rgba(255, 107, 53, 0.08) !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.25);
+    animation: form-field-glow 1.4s ease-in-out infinite;
+}
+
+/* Метка обязательного поля */
+.form-required-mark {
+    color: var(--orange);
+    margin-left: 0.2rem;
+    font-weight: 700;
+}
+.form-required-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+.form-required-note .form-required-mark {
+    margin-left: 0;
+    margin-right: 0.3rem;
+}
+
 .phone-input-wrapper {
     display: flex;
     align-items: center;
@@ -2827,6 +2857,24 @@ footer {
     color: var(--gray-600);
     letter-spacing: 0;
     margin-top: 0.2rem;
+}
+
+/* Площадь модуля через дефис: «28 Б/модуль — 0,52 м²».
+   Жирная, в брендовом оранжевом, чуть меньше основной цены — читается как часть цены. */
+.product-card .product-price-area {
+    display: inline;
+    margin-left: 0.35rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--orange-dark);
+    letter-spacing: -0.01em;
+}
+/* Тире-разделитель — тусклее, чтобы не перетягивал внимание */
+.product-card .product-price-area-dash {
+    color: var(--gray-600);
+    font-weight: 500;
+    margin-right: 0.15rem;
+    opacity: 0.7;
 }
 
 .product-article {
@@ -3973,10 +4021,11 @@ footer {
     .pcq-result-value--total {
         font-size: 1.25rem;
     }
-    /* Keep heading + trigger button on one row, shrink button to fit */
+    /* Mobile: heading + trigger button — keep on one row when possible,
+       drop button to a new full-width row when heading is too long. */
     .catalogue-section-heading {
-        flex-wrap: nowrap;
-        gap: 0.6rem;
+        flex-wrap: wrap;
+        gap: 0.6rem 0.75rem;
         align-items: center;
         justify-content: space-between;
     }
@@ -3984,19 +4033,27 @@ footer {
         font-size: 1.15rem;
         flex: 1 1 auto;
         min-width: 0;
-        white-space: nowrap;
-    }
-    .catalogue-section-heading .catalogue-section-label a {
-        white-space: nowrap;
     }
     .catalogue-section-heading .pcq-trigger {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.78rem;
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
         letter-spacing: 0.01em;
-        flex: 0 0 auto;
+        flex: 0 1 auto;
         white-space: nowrap;
     }
+
+    /* --stack: для длинных заголовков (страницы /gibkij-kamen, /gibkij-kirpich)
+       заголовок и кнопка всегда в две строки. Заголовок не обрезается. */
+    .catalogue-section-heading--stack {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .catalogue-section-heading--stack .pcq-trigger {
+        align-self: flex-start;
+    }
 }
+
 
 /* =========================================
    Announcement bar (акция -10% от 20 м²)

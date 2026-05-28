@@ -1,0 +1,3 @@
+module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},76958,a=>{"use strict";var b=a.i(87924),c=a.i(24671);function d(){return c.PROMO.enabled?(0,b.jsx)("div",{className:"promo-inline",role:"region","aria-label":"Акция",children:(0,b.jsx)("span",{className:"promo-inline-text",children:c.PROMO.text})}):null}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=_6b04933d._.js.map

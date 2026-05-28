@@ -4,10 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePriceQuiz } from '@/components/PriceQuizContext';
 import BynSymbol from '@/components/BynSymbol';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import ProductModal, { type ProductForModal } from '@/components/ProductModal';
 
 export default function GibkijKirpichPage() {
   const { open: openPriceQuiz } = usePriceQuiz();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<ProductForModal | null>(null);
   const [workStatus, setWorkStatus] = useState<{ isOpen: boolean; text: string } | null>(null);
 
   useEffect(() => {
@@ -162,8 +165,11 @@ export default function GibkijKirpichPage() {
               <a href="tel:+375293027435" style={{ color: 'var(--brand)', fontWeight: 600 }}>+375 (29) 302-74-35</a>
             </p>
 
+            {/* Promo bar над каталогом */}
+            <AnnouncementBar />
+
             {/* Catalog section heading + calculator trigger */}
-            <div className="catalogue-section-heading">
+            <div className="catalogue-section-heading catalogue-section-heading--stack">
               <h2 className="catalogue-section-label">коллекции гибкого кирпича</h2>
               <button
                 type="button"
@@ -175,12 +181,16 @@ export default function GibkijKirpichPage() {
             </div>
             <div className="products-grid">
               {brickProducts.map((product) => (
-                <article key={product.id} className="product-card">
+                <article
+                  key={product.id}
+                  className="product-card"
+                  onClick={() => setSelectedProduct({ ...product, category: 'brick' })}
+                >
                   <div className="product-image">
                     <img src={product.image} alt={product.art} loading="lazy" />
                   </div>
                   <div className="product-info">
-                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<br /><span className="product-price-sub">1 <BynSymbol />/шт</span></span>
+                    <span className="product-price">{product.price} <BynSymbol />{product.unit}<span className="product-price-area"><span className="product-price-area-dash">—</span>0,6 м²</span></span>
                     <span className="product-article">{product.art}</span>
                     <div className="product-details">
                       <span className="product-size"><span className="size-label">Размер:</span> {product.size}</span>
@@ -190,6 +200,8 @@ export default function GibkijKirpichPage() {
                 </article>
               ))}
             </div>
+
+            <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
 
             {/* Back to main */}
             <div style={{ textAlign: 'center', margin: '2.5rem 0' }}>

@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 import CookieBanner from '@/components/CookieBanner';
 import { PriceQuizProvider } from '@/components/PriceQuizContext';
 import PriceCalculator from '@/components/PriceCalculator';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import './globals.css';
 
 const inter = Inter({
@@ -310,7 +309,6 @@ export default function RootLayout({
           </div>
         </noscript>
         {/* /Yandex.Metrika counter */}
-        <AnnouncementBar />
         <PriceQuizProvider>
           {children}
           <PriceCalculator />
