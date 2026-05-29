@@ -785,7 +785,7 @@ export default function HomePage() {
                   {selectedProduct.category === 'brick' && (
                     <div className="spec-row">
                       <span className="spec-label">Цена за 1 шт:</span>
-                      <span className="spec-value price">1 <BynSymbol /></span>
+                      <span className="spec-value price">0,90 <BynSymbol /></span>
                     </div>
                   )}
                 </div>
